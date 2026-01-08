@@ -3,33 +3,50 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'About | The Rise & Fall Podcast',
-  description: 'Learn about The Rise & Fall Podcast, our mission, and the story behind the show.',
+  description: 'Meet Leon and Aviv, hosts of The Rise & Fall Podcast - personal interviews with real estate leaders.',
 };
 
-const values = [
+const episodeStructure = [
   {
-    title: 'Rise',
-    description:
-      'We celebrate the moments of triumph, the breakthroughs, and the victories that define success. Every journey has its peaks.',
+    title: 'Opening',
+    duration: '2 min',
+    description: 'Leon and Aviv introduce the guest with a captivating overview of their background, achievements, and relevance.',
   },
   {
-    title: 'Fall',
-    description:
-      'We honor the failures, setbacks, and lessons learned. These moments shape character and forge resilience.',
+    title: 'Roots',
+    duration: '5-10 min',
+    description: 'Childhood, key influences, education, first jobs, and the turning points that shaped their path.',
   },
   {
-    title: 'Rise Again',
-    description:
-      'The most powerful stories are about comebacks. We explore how the greatest succeed not despite failure, but because of it.',
+    title: 'Career Journey',
+    duration: '15 min',
+    description: 'Deep dive into achievements, leadership moments, challenges, failures, and lessons learned. Extracting the juice.',
+  },
+  {
+    title: 'The Person Behind',
+    duration: '15 min',
+    description: 'Personal values, guiding principles, daily habits, decision-making philosophy, family, and side projects.',
+  },
+  {
+    title: 'Quick Fire',
+    duration: '5 min',
+    description: 'Rapid questions: favorite books, mantras, mentors, and hobbies.',
   },
 ];
 
-const pressLogos = [
-  { name: 'The New York Times', width: 160 },
-  { name: 'Forbes', width: 100 },
-  { name: 'Wired', width: 80 },
-  { name: 'Fast Company', width: 140 },
-  { name: 'TechCrunch', width: 120 },
+const values = [
+  {
+    title: 'Inspiration',
+    description: 'Every episode is designed to inspire. We showcase the journeys of those who built empires from vision and persistence.',
+  },
+  {
+    title: 'Exclusivity',
+    description: 'Insider access to conversations you won\'t find anywhere else. Unfiltered stories from the top.',
+  },
+  {
+    title: 'Storytelling',
+    description: 'People remember stories, not facts. We craft narratives that resonate and stay with you.',
+  },
 ];
 
 export default function AboutPage() {
@@ -40,7 +57,7 @@ export default function AboutPage() {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: `url(https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920)`,
+            backgroundImage: `url(https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920)`,
           }}
         >
           <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a] via-[#1a1a1a]/70 to-black/30" />
@@ -54,144 +71,133 @@ export default function AboutPage() {
       {/* Mission Section */}
       <section className="px-6 md:px-12 lg:px-24 py-24 bg-[#111]">
         <div className="max-w-4xl">
-          <h2 className="text-4xl md:text-5xl font-light mb-8">The Rise & Fall Podcast</h2>
+          <h2 className="text-4xl md:text-5xl font-light mb-8">Personal Interviews with RE Leaders</h2>
           <p className="text-xl text-gray-300 leading-relaxed mb-8">
-            Every success story has chapters of failure. Every comeback begins with a fall. The Rise & Fall
-            is a podcast dedicated to exploring the complete journeys of remarkable people—the triumphs,
-            the setbacks, and the resilience that defines true greatness.
+            The Rise & Fall is a podcast dedicated to uncovering the personal stories behind real estate&apos;s most influential leaders.
+            We go beyond the headlines to explore the roots, the journey, and the philosophy of those who shape our cities and communities.
           </p>
           <p className="text-lg text-gray-400 leading-relaxed">
-            We believe the most inspiring stories aren&apos;t about people who never failed—they&apos;re about
-            those who fell and found the strength to rise again. Each episode dives deep into these
-            transformative moments.
+            Each episode follows a carefully crafted structure: from childhood influences to career-defining moments,
+            from failures and regrets to personal values and daily habits. We extract the juice—the lessons that matter.
           </p>
         </div>
       </section>
 
-      {/* Full Width Image */}
-      <section className="relative h-[60vh]">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: `url(https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=1920)`,
-          }}
-        />
+      {/* Hosts Section */}
+      <section className="px-6 md:px-12 lg:px-24 py-24">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-light mb-16 text-center">Meet Your Hosts</h2>
+          <div className="grid md:grid-cols-2 gap-16">
+            {/* Leon */}
+            <div className="text-center md:text-left">
+              <div className="relative aspect-[3/4] mb-8 max-w-sm mx-auto md:mx-0">
+                <img
+                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800"
+                  alt="Leon"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <h3 className="text-2xl font-light mb-4">Leon</h3>
+              <p className="text-gray-400 leading-relaxed">
+                A seasoned professional with deep connections in the real estate industry.
+                Leon brings decades of experience and a network that opens doors to Israel&apos;s most influential leaders.
+                His interviewing style balances warmth with incisive questions that reveal the person behind the title.
+              </p>
+            </div>
+
+            {/* Aviv */}
+            <div className="text-center md:text-left">
+              <div className="relative aspect-[3/4] mb-8 max-w-sm mx-auto md:mx-0">
+                <img
+                  src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=800"
+                  alt="Aviv"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <h3 className="text-2xl font-light mb-4">Aviv</h3>
+              <p className="text-gray-400 leading-relaxed">
+                The creative force behind the podcast&apos;s production and digital presence.
+                Aviv combines storytelling expertise with technical know-how to create compelling content
+                that resonates across platforms. His fresh perspective ensures every episode connects with modern audiences.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Episode Structure */}
+      <section className="px-6 md:px-12 lg:px-24 py-24 bg-[#f5f5f5] text-[#1a1a1a]">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-light mb-4 text-center">Episode Structure</h2>
+          <p className="text-center text-gray-600 mb-16 max-w-2xl mx-auto">
+            Every episode follows a proven format designed to reveal the complete story.
+          </p>
+          <div className="grid md:grid-cols-5 gap-6">
+            {episodeStructure.map((section, index) => (
+              <div key={section.title} className="text-center">
+                <div className="w-12 h-12 rounded-full bg-[#1a1a1a] text-white flex items-center justify-center mx-auto mb-4 text-lg font-light">
+                  {index + 1}
+                </div>
+                <h3 className="text-lg font-medium mb-2">{section.title}</h3>
+                <p className="text-sm text-gray-500 mb-3">{section.duration}</p>
+                <p className="text-sm text-gray-600 leading-relaxed">{section.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
       </section>
 
       {/* Values Section */}
-      <section className="px-6 md:px-12 lg:px-24 py-24 bg-[#f5f5f5] text-[#1a1a1a]">
+      <section className="px-6 md:px-12 lg:px-24 py-24 bg-[#111]">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-light mb-4 text-center">Our Philosophy</h2>
-          <p className="text-center text-gray-600 mb-16 max-w-2xl mx-auto">
-            Three principles guide every conversation we have.
+          <h2 className="text-3xl md:text-4xl font-light mb-4 text-center">Our Approach</h2>
+          <p className="text-center text-gray-400 mb-16 max-w-2xl mx-auto">
+            Psychological elements that make every episode memorable.
           </p>
           <div className="grid md:grid-cols-3 gap-12">
             {values.map((value) => (
               <div key={value.title} className="text-center">
                 <h3 className="text-2xl font-light mb-4">{value.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{value.description}</p>
+                <p className="text-gray-400 leading-relaxed">{value.description}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Studio Section */}
-      <section className="px-6 md:px-12 lg:px-24 py-24 bg-[#111]">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-light mb-8">Our Studio</h2>
-              <p className="text-lg text-gray-300 leading-relaxed mb-6">
-                Every episode is recorded in our purpose-built studio, designed for exceptional
-                audio quality and intimate conversation.
-              </p>
-              <p className="text-gray-400 leading-relaxed mb-6">
-                We invest in professional-grade equipment and meticulous post-production because we
-                believe that great content deserves great sound. From microphones to mastering, no
-                detail is overlooked.
-              </p>
-              <ul className="space-y-3 text-gray-400">
-                <li className="flex items-center gap-3">
-                  <span className="w-2 h-2 bg-white rounded-full" />
-                  Professional studio microphones
-                </li>
-                <li className="flex items-center gap-3">
-                  <span className="w-2 h-2 bg-white rounded-full" />
-                  Acoustic treatment for pristine audio
-                </li>
-                <li className="flex items-center gap-3">
-                  <span className="w-2 h-2 bg-white rounded-full" />
-                  Expert audio engineering and mastering
-                </li>
-              </ul>
-            </div>
-            <div className="relative aspect-square">
-              <img
-                src="https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=800"
-                alt="Recording studio"
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Host Section */}
+      {/* Seasons Overview */}
       <section className="px-6 md:px-12 lg:px-24 py-24">
         <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="order-2 md:order-1">
-              <p className="text-sm uppercase tracking-[0.3em] text-gray-500 mb-4">Your Host</p>
-              <h2 className="text-3xl md:text-4xl font-light mb-6">Leon Avigad</h2>
-              <p className="text-lg text-gray-300 leading-relaxed mb-6">
-                A lifelong student of human potential and the founder of Brown Hotels, Leon brings
-                decades of experience in hospitality, leadership, and the art of meaningful
-                conversation.
-              </p>
-              <p className="text-gray-400 leading-relaxed mb-8">
-                His curiosity spans architecture, design, philosophy, and the human stories that
-                shape our world. Through The Rise & Fall, he creates space for the conversations he
-                wishes existed more often.
-              </p>
-              <Link href="/contact" className="btn-primary">
-                Get in Touch
-              </Link>
+          <h2 className="text-3xl md:text-4xl font-light mb-16 text-center">Season Plan</h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="p-8 bg-[#111] rounded">
+              <p className="text-sm uppercase tracking-wider text-gray-500 mb-2">Season 1</p>
+              <h3 className="text-xl font-light mb-4">Israeli Leaders</h3>
+              <p className="text-gray-400 mb-4">10-12 episodes in Hebrew featuring Israel&apos;s top real estate leaders.</p>
+              <p className="text-sm text-gray-500">Target audience: Israeli RE professionals</p>
             </div>
-            <div className="order-1 md:order-2 relative aspect-[3/4]">
-              <img
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800"
-                alt="Leon Avigad"
-                className="w-full h-full object-cover"
-              />
+            <div className="p-8 bg-[#111] rounded">
+              <p className="text-sm uppercase tracking-wider text-gray-500 mb-2">Season 2</p>
+              <h3 className="text-xl font-light mb-4">Global Israeli</h3>
+              <p className="text-gray-400 mb-4">5-7 episodes in English with Israeli/Jewish leaders operating globally.</p>
+              <p className="text-sm text-gray-500">Target audience: International RE community</p>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Press Section */}
-      <section className="px-6 md:px-12 lg:px-24 py-24 bg-[#0a0a0a]">
-        <div className="max-w-6xl mx-auto text-center">
-          <p className="text-sm uppercase tracking-[0.3em] text-gray-500 mb-12">As Featured In</p>
-          <div className="flex flex-wrap justify-center items-center gap-12 opacity-50">
-            {pressLogos.map((logo) => (
-              <div
-                key={logo.name}
-                className="text-2xl font-light tracking-wider"
-                style={{ width: logo.width }}
-              >
-                {logo.name}
-              </div>
-            ))}
+            <div className="p-8 bg-[#111] rounded">
+              <p className="text-sm uppercase tracking-wider text-gray-500 mb-2">Season 3</p>
+              <h3 className="text-xl font-light mb-4">Global Icons</h3>
+              <p className="text-gray-400 mb-4">5-7 episodes in English with world-renowned architects and developers.</p>
+              <p className="text-sm text-gray-500">Target audience: Global RE industry</p>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Contact CTA */}
-      <section className="px-6 md:px-12 lg:px-24 py-24 text-center">
-        <h2 className="text-3xl md:text-4xl font-light mb-4">Let&apos;s Connect</h2>
+      <section className="px-6 md:px-12 lg:px-24 py-24 bg-[#0a0a0a] text-center">
+        <h2 className="text-3xl md:text-4xl font-light mb-4">Want to Be a Guest?</h2>
         <p className="text-gray-400 mb-8 max-w-xl mx-auto">
-          Have a story to share? Interested in collaborating? We&apos;d love to hear from you.
+          We&apos;re looking for real estate leaders with compelling stories. If you&apos;ve built something remarkable,
+          we want to hear from you.
         </p>
         <Link href="/contact" className="btn-primary">
           Get in Touch

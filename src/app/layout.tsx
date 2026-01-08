@@ -16,14 +16,14 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'The Rise & Fall Podcast',
+  title: 'The Rise & Fall Podcast | Personal Interviews with RE Leaders',
   description:
-    'Stories of triumph, failure, and everything in between. A podcast exploring the journeys that shape leaders, entrepreneurs, and visionaries.',
-  keywords: ['podcast', 'interviews', 'rise and fall', 'success', 'failure', 'entrepreneurship'],
-  authors: [{ name: 'The Rise & Fall Podcast' }],
+    'Personal interviews with real estate leaders. Exploring their roots, career journeys, failures, and the philosophies that shaped their success.',
+  keywords: ['podcast', 'real estate', 'interviews', 'leadership', 'Israel', 'property', 'development', 'architecture'],
+  authors: [{ name: 'Leon' }, { name: 'Aviv' }],
   openGraph: {
     title: 'The Rise & Fall Podcast',
-    description: 'Stories of triumph, failure, and everything in between.',
+    description: 'Personal interviews with real estate leaders. Their roots, their journey, their legacy.',
     type: 'website',
     locale: 'en_US',
     siteName: 'The Rise & Fall Podcast',
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'The Rise & Fall Podcast',
-    description: 'Stories of triumph, failure, and everything in between.',
+    description: 'Personal interviews with real estate leaders. Their roots, their journey, their legacy.',
   },
 };
 
