@@ -120,11 +120,6 @@ export default function FullScreenSlider({ slides }: FullScreenSliderProps) {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.5 }}
             >
-              {currentSlide.category && currentSlide.type !== 'episode' && (
-                <p className="text-xs md:text-sm uppercase tracking-[0.3em] text-white/70 mb-4">
-                  {currentSlide.category}
-                </p>
-              )}
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-light tracking-wide mb-4">
                 {currentSlide.title}
               </h1>
