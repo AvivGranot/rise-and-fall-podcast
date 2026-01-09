@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronLeft, ChevronRight, Play } from 'lucide-react';
+import { ChevronDown, Play } from 'lucide-react';
 import Link from 'next/link';
 import { Episode, Slide } from '@/types';
 
@@ -48,7 +48,7 @@ export default function EpisodeScrollExperience({
 
     const interval = setInterval(() => {
       nextSlide();
-    }, 4000);
+    }, 6000);
 
     return () => clearInterval(interval);
   }, [isAutoPlaying, nextSlide]);
@@ -285,19 +285,9 @@ export default function EpisodeScrollExperience({
         </motion.div>
       </AnimatePresence>
 
-      {/* Navigation Arrows */}
-      <div className="absolute bottom-8 right-6 md:right-12 flex items-center gap-4 z-40">
-        <button
-          onClick={() => {
-            handleUserInteraction();
-            prevSlide();
-          }}
-          className="p-3 border border-white/30 hover:border-white hover:bg-white hover:text-black transition-all"
-          aria-label="Previous slide"
-        >
-          <ChevronLeft size={20} />
-        </button>
-        <span className="text-sm tabular-nums">
+      {/* Center Down Arrow */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-40">
+        <span className="text-sm tabular-nums text-white/70">
           {String(currentIndex + 1).padStart(2, '0')} / {String(totalSlides).padStart(2, '0')}
         </span>
         <button
@@ -305,10 +295,10 @@ export default function EpisodeScrollExperience({
             handleUserInteraction();
             nextSlide();
           }}
-          className="p-3 border border-white/30 hover:border-white hover:bg-white hover:text-black transition-all"
+          className="p-3 border border-white/30 hover:border-white hover:bg-white hover:text-black transition-all animate-bounce"
           aria-label="Next slide"
         >
-          <ChevronRight size={20} />
+          <ChevronDown size={24} />
         </button>
       </div>
 

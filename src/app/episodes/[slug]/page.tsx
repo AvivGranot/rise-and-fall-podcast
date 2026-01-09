@@ -59,36 +59,9 @@ export default async function EpisodePage({ params }: PageProps) {
 
   return (
     <div className="min-h-screen bg-[#1a1a1a]">
-      {/* Hero Section */}
-      <section className="relative h-screen flex items-end">
-        <div
-          className="absolute inset-0 bg-cover"
-          style={{
-            backgroundImage: `url(${episode.artwork})`,
-            backgroundPosition: episode.artworkPosition ? `${episode.artworkPosition} top` : 'center'
-          }}
-        >
-          <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a] via-[#1a1a1a]/70 to-black/30" />
-        </div>
-        <div className="relative z-10 px-6 md:px-12 lg:px-24 pb-24 w-full">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-light mb-4 max-w-4xl">
-            {episode.title}
-            {episode.guests && episode.guests.length > 0 && (
-              <span className="block text-2xl md:text-3xl text-white/80 mt-4">
-                with {episode.guests.map((g) => g.name).join(', ')}
-              </span>
-            )}
-          </h1>
-          <button className="btn-primary">
-            <Play size={16} />
-            Play Episode
-          </button>
-        </div>
-      </section>
-
-      {/* Guest Image */}
+      {/* Guest Image Hero */}
       {episode.images && episode.images[1] && (
-        <section className={episode.imagePosition === 'horizontal' ? 'h-[50vh] md:h-[60vh]' : 'h-screen'}>
+        <section className={episode.imagePosition === 'horizontal' ? 'h-[50vh] md:h-[70vh]' : 'h-screen'}>
           <div
             className={`h-full bg-cover ${
               episode.imagePosition === 'center' ? 'bg-center' :
