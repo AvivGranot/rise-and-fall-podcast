@@ -13,15 +13,13 @@ export default function Footer() {
       <div className="px-6 md:px-12 lg:px-24 py-16">
         <div className="max-w-6xl mx-auto">
           <div className={`grid md:grid-cols-4 gap-12 mb-16 ${isRTL ? 'text-right' : ''}`}>
-            {/* Brand */}
-            <div className="md:col-span-2">
+            {/* Brand - hidden on mobile */}
+            <div className="hidden md:block md:col-span-2">
               <Link href="/" className="text-2xl font-light tracking-widest uppercase mb-6 block">
                 {t('footer.theRiseAndFall')}
               </Link>
               <p className="text-gray-400 max-w-md">
-                {isRTL
-                  ? 'שיחות שמהדהדות. סיפורים שמעוררים השראה. רעיונות שמשנים. פודקאסט המוקדש לדיאלוג משמעותי והקשבה עמוקה.'
-                  : 'Conversations that resonate. Stories that inspire. Ideas that transform. A podcast dedicated to meaningful dialogue and deep listening.'}
+                Conversations that resonate. Stories that inspire. Ideas that transform. A podcast dedicated to meaningful dialogue and deep listening.
               </p>
             </div>
 
