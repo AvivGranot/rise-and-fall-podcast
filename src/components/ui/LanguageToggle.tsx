@@ -9,7 +9,7 @@ export default function LanguageToggle() {
   return (
     <button
       onClick={() => setLanguage(language === 'en' ? 'he' : 'en')}
-      className={`fixed top-6 z-50 flex items-center gap-1 px-3 py-1.5 bg-black/50 backdrop-blur-sm border border-white/20 hover:border-white/40 transition-all text-sm font-medium ${
+      className={`fixed top-20 z-50 flex items-center gap-1 px-3 py-1.5 bg-black/50 backdrop-blur-sm border border-white/20 hover:border-white/40 transition-all text-sm font-medium ${
         isRTL ? 'left-6' : 'right-6'
       }`}
       aria-label={language === 'en' ? 'Switch to Hebrew' : 'Switch to English'}

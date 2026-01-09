@@ -65,6 +65,7 @@ export default function EpisodeContent({ episode, relatedEpisodes }: EpisodeCont
             className={`h-full bg-cover ${
               episode.imagePosition === 'center' ? 'bg-center' :
               episode.imagePosition === 'horizontal' ? 'bg-center' :
+              episode.imagePosition === 'right' ? 'bg-right-top' :
               'bg-top'
             }`}
             style={{
