@@ -120,7 +120,7 @@ export default function FullScreenSlider({ slides }: FullScreenSliderProps) {
             </div>
           ) : (
             <div
-              className="absolute inset-0 bg-cover bg-center"
+              className="absolute inset-0 bg-cover bg-top md:bg-center"
               style={{ backgroundImage: `url(${currentSlide.backgroundImage})` }}
             >
               <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/50 to-black/70" />
