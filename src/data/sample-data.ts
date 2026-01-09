@@ -222,7 +222,7 @@ export const slides: Slide[] = [
   {
     id: '2',
     type: 'episode',
-    category: 'EPISODE',
+    category: 'DANA AZRIELI',
     title: 'Building an Empire: The Azrieli Story',
     subtitle: 'with Dana Azrieli',
     backgroundImage: '/rise-and-fall-podcast/episodes/azrieli/Azrieli_Web_Hero-2160x1080.webp',
@@ -232,7 +232,7 @@ export const slides: Slide[] = [
   {
     id: '3',
     type: 'episode',
-    category: 'EPISODE',
+    category: 'DAVID FATTAL',
     title: 'From Vision to Reality',
     subtitle: 'with David Fattal',
     backgroundImage: '/rise-and-fall-podcast/episodes/fattal/fattal-hotels.png',
@@ -242,7 +242,7 @@ export const slides: Slide[] = [
   {
     id: '4',
     type: 'episode',
-    category: 'EPISODE',
+    category: 'BARAK ROSEN',
     title: 'The Art of Development',
     subtitle: 'with Barak Rosen',
     backgroundImage: '/rise-and-fall-podcast/episodes/rosen/rainbow.jpg',
@@ -252,7 +252,7 @@ export const slides: Slide[] = [
   {
     id: '5',
     type: 'episode',
-    category: 'EPISODE',
+    category: 'HAGAG BROTHERS',
     title: 'Partnerships & Competition Between Brothers',
     subtitle: 'with the Hagag Brothers',
     backgroundImage: '/rise-and-fall-podcast/episodes/hagag/first.png',
@@ -262,7 +262,7 @@ export const slides: Slide[] = [
   {
     id: '7',
     type: 'episode',
-    category: 'EPISODE',
+    category: 'HERZL HABS',
     title: 'The Greatest Comeback',
     subtitle: 'with Herzl Habs',
     backgroundImage: '/rise-and-fall-podcast/episodes/habs/mandarin.webp',
