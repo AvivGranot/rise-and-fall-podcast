@@ -38,34 +38,61 @@ export default function MobileEpisodesList({ episodes }: MobileEpisodesListProps
         </div>
       </section>
 
-      {/* About Section */}
+      {/* Meet Your Hosts Section */}
       <section className="px-6 py-12 bg-[#111]">
-        <h2 className={`text-2xl font-light mb-6 ${isRTL ? 'text-right' : ''}`}>
-          {isRTL ? 'אודות הפודקאסט' : 'About the Podcast'}
+        <h2 className={`text-2xl font-light mb-8 text-center`}>
+          {t('about.meetHosts')}
         </h2>
-        <p className={`text-gray-300 leading-relaxed mb-4 ${isRTL ? 'text-right' : ''}`}>
-          {isRTL
-            ? 'The Rise & Fall הוא פודקאסט המוקדש לחשיפת הסיפורים האישיים מאחורי מנהיגי הנדל"ן המשפיעים ביותר.'
-            : 'The Rise & Fall is a podcast dedicated to uncovering the personal stories behind real estate\'s most influential leaders.'}
-        </p>
-        <Link href="/about" className="btn-primary inline-block mt-4">
-          {isRTL ? 'למידע נוסף' : 'Learn More'}
-        </Link>
-      </section>
 
-      {/* Contact CTA */}
-      <section className="px-6 py-12 text-center">
-        <h2 className="text-2xl font-light mb-4">
-          {isRTL ? 'רוצים להיות אורחים?' : 'Want to Be a Guest?'}
-        </h2>
-        <p className="text-gray-400 mb-6 text-sm">
-          {isRTL
-            ? 'אנחנו מחפשים מנהיגי נדל"ן עם סיפורים מרתקים.'
-            : 'We\'re looking for real estate leaders with compelling stories.'}
+        {/* Aviv */}
+        <div className="text-center mb-8">
+          <div className="relative aspect-[3/4] mb-4 max-w-[200px] mx-auto">
+            <img
+              src="/rise-and-fall-podcast/about/aviv.jpeg"
+              alt="Aviv"
+              className="w-full h-full object-cover object-top"
+            />
+          </div>
+          <h3 className="text-xl font-light mb-2">Aviv</h3>
+          <a
+            href="https://www.linkedin.com/in/aviv-granot/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-400 hover:text-white transition-colors text-sm"
+          >
+            Connect via LinkedIn
+          </a>
+        </div>
+
+        {/* Leon */}
+        <div className="text-center mb-8">
+          <div className="relative aspect-[3/4] mb-4 max-w-[200px] mx-auto">
+            <img
+              src="/rise-and-fall-podcast/about/leon.jpg"
+              alt="Leon"
+              className="w-full h-full object-cover object-top"
+            />
+          </div>
+          <h3 className="text-xl font-light mb-2">Leon</h3>
+          <a
+            href="https://www.linkedin.com/in/leon-avigad-07bb6218/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-400 hover:text-white transition-colors text-sm"
+          >
+            Connect via LinkedIn
+          </a>
+        </div>
+
+        {/* About paragraph */}
+        <p className={`text-gray-300 leading-relaxed text-center mt-8`}>
+          The Rise & Fall is a podcast dedicated to uncovering the personal stories behind real estate's most influential leaders.
         </p>
-        <Link href="/contact" className="btn-primary">
-          {t('nav.contact')}
-        </Link>
+        <div className="text-center">
+          <Link href="/about" className="btn-primary inline-block mt-6">
+            Learn More
+          </Link>
+        </div>
       </section>
     </div>
   );
