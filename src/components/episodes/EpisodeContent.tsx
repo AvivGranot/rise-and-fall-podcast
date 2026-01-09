@@ -58,16 +58,13 @@ export default function EpisodeContent({ episode, relatedEpisodes }: EpisodeCont
         </div>
       </section>
 
-      {/* Guest Speaker Image - Always horizontal */}
+      {/* Guest Speaker Image */}
       {episode.images && episode.images[1] && (
         <section className="h-[50vh] md:h-[70vh]">
           <div
-            className="h-full bg-center"
+            className="h-full bg-cover bg-center"
             style={{
-              backgroundImage: `url(${episode.images[1]})`,
-              backgroundSize: 'contain',
-              backgroundRepeat: 'no-repeat',
-              backgroundColor: '#1a1a1a'
+              backgroundImage: `url(${episode.images[1]})`
             }}
           />
         </section>
