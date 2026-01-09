@@ -106,17 +106,21 @@ export const episodes: Episode[] = [
     audioUrl: '/audio/sample.mp3',
     duration: 2700,
     publishedAt: '2025-03-08',
-    artwork: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800',
+    artwork: '/rise-and-fall-podcast/episodes/fattal/fattal-hotels.png',
     guests: [
       {
         id: '2',
         name: 'David Fattal',
         bio: 'Founder and CEO of Fattal Hotels, operating Leonardo and other hotel brands across Europe',
-        photo: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400',
+        photo: '/rise-and-fall-podcast/episodes/fattal/david-fattal.jpeg',
       },
     ],
     topics: ['Hospitality', 'Entrepreneurship', 'Europe', 'Hotels'],
     featured: true,
+    images: [
+      '/rise-and-fall-podcast/episodes/fattal/fattal-hotels.png',
+      '/rise-and-fall-podcast/episodes/fattal/david-fattal.jpeg',
+    ],
   },
   {
     id: '3',
@@ -243,7 +247,7 @@ export const slides: Slide[] = [
     category: 'EPISODE',
     title: 'From Vision to Reality',
     subtitle: 'with David Fattal',
-    backgroundImage: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1920',
+    backgroundImage: '/rise-and-fall-podcast/episodes/fattal/fattal-hotels.png',
     ctaText: 'Listen Now',
     ctaLink: '/episodes/from-vision-to-reality-fattal',
   },
