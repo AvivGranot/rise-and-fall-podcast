@@ -6,16 +6,6 @@ import { useLanguage } from '@/context/LanguageContext';
 
 const shareChannels = [
   {
-    name: 'Email',
-    color: '#EA4335',
-    getUrl: (url: string, text: string) => `mailto:?subject=${encodeURIComponent(text)}&body=${encodeURIComponent(url)}`,
-    icon: (
-      <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
-        <path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/>
-      </svg>
-    ),
-  },
-  {
     name: 'Facebook',
     color: '#1877F2',
     getUrl: (url: string) => `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`,
@@ -66,32 +56,26 @@ export default function ShareWidget() {
 
   return (
     <div className={`fixed bottom-24 z-50 ${isRTL ? 'left-6' : 'right-6'}`}>
-      {/* Share channels - fan out in arc */}
-      <div className={`absolute bottom-8 flex flex-col gap-2 transition-all duration-300 ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
-        {shareChannels.map((channel, index) => {
-          const angle = isRTL ? (index * 16) - 32 : -(index * 16) + 32;
-          const translateX = isRTL ? -(Math.sin(angle * Math.PI / 180) * 38) : Math.sin(angle * Math.PI / 180) * 38;
-          const translateY = -Math.cos(angle * Math.PI / 180) * 38 - (index * 4);
-
-          return (
-            <a
-              key={channel.name}
-              href={channel.getUrl(shareUrl, shareText)}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`Share on ${channel.name}`}
-              className="flex items-center justify-center w-10 h-10 rounded-full shadow-lg transition-all duration-300 hover:scale-110"
-              style={{
-                backgroundColor: channel.color,
-                transform: isOpen ? `translate(${translateX}px, ${translateY}px)` : 'translate(0, 0)',
-                transitionDelay: isOpen ? `${index * 50}ms` : '0ms',
-              }}
-              onClick={() => setIsOpen(false)}
-            >
-              <span className="text-white">{channel.icon}</span>
-            </a>
-          );
-        })}
+      {/* Share channels - column layout */}
+      <div className={`absolute bottom-14 flex flex-col gap-3 transition-all duration-300 ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
+        {shareChannels.map((channel, index) => (
+          <a
+            key={channel.name}
+            href={channel.getUrl(shareUrl, shareText)}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`Share on ${channel.name}`}
+            className="flex items-center justify-center w-10 h-10 rounded-full shadow-lg transition-all duration-300 hover:scale-110"
+            style={{
+              backgroundColor: channel.color,
+              transform: isOpen ? 'translateY(0)' : 'translateY(20px)',
+              transitionDelay: isOpen ? `${index * 50}ms` : '0ms',
+            }}
+            onClick={() => setIsOpen(false)}
+          >
+            <span className="text-white">{channel.icon}</span>
+          </a>
+        ))}
       </div>
 
       {/* Main share button */}
