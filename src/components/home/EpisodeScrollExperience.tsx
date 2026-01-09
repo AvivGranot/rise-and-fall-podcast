@@ -235,7 +235,7 @@ export default function EpisodeScrollExperience({
   };
 
   return (
-    <div className="relative h-screen w-full overflow-hidden">
+    <div id="carousel" className="relative h-screen w-full overflow-hidden">
       {/* Mini Navigation Sidebar */}
       <div className={`fixed top-1/2 -translate-y-1/2 z-40 hidden lg:block ${isRTL ? 'right-6' : 'left-6'}`}>
         <ul className="space-y-4">
@@ -245,6 +245,7 @@ export default function EpisodeScrollExperience({
                 onClick={() => {
                   handleUserInteraction();
                   goToSlide(index);
+                  document.getElementById('carousel')?.scrollIntoView({ behavior: 'smooth' });
                 }}
                 className={`block text-xs uppercase tracking-wider transition-all duration-300 max-w-[120px] truncate ${
                   isRTL ? 'text-right' : 'text-left'
