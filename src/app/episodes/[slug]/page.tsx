@@ -87,7 +87,7 @@ export default async function EpisodePage({ params }: PageProps) {
       {episode.images && episode.images[1] && (
         <section className="h-screen">
           <div
-            className="h-full bg-cover bg-center"
+            className="h-full bg-cover bg-top"
             style={{ backgroundImage: `url(${episode.images[1]})` }}
           />
         </section>
