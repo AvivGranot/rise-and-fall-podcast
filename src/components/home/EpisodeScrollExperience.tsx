@@ -237,37 +237,29 @@ export default function EpisodeScrollExperience({
       {/* Mini Navigation Sidebar */}
       <div className="fixed left-6 top-1/2 -translate-y-1/2 z-40 hidden lg:block">
         <ul className="space-y-4">
-          {[...episodes, { id: 'about', slug: null }, { id: 'contact', slug: null }].map((item, index) => {
-            const isEpisode = index < episodes.length;
-            const episode = isEpisode ? episodes[index] : null;
-            const href = isEpisode
-              ? `/episodes/${episode?.slug}`
-              : index === episodes.length
-                ? '/about'
-                : '/contact';
-
-            return (
-              <li key={item.id}>
-                <Link
-                  href={href}
-                  onClick={handleUserInteraction}
-                  className={`block text-xs uppercase tracking-wider transition-all duration-300 text-left max-w-[120px] truncate ${
-                    index === currentIndex
-                      ? 'text-white opacity-100'
-                      : 'text-white/50 hover:text-white/80'
+          {[...episodes, { id: 'about' }, { id: 'contact' }].map((item, index) => (
+            <li key={item.id}>
+              <button
+                onClick={() => {
+                  handleUserInteraction();
+                  goToSlide(index);
+                }}
+                className={`block text-xs uppercase tracking-wider transition-all duration-300 text-left max-w-[120px] truncate ${
+                  index === currentIndex
+                    ? 'text-white opacity-100'
+                    : 'text-white/50 hover:text-white/80'
+                }`}
+                title={getSlideLabel(index)}
+              >
+                <span
+                  className={`inline-block w-2 h-2 rounded-full mr-2 transition-all ${
+                    index === currentIndex ? 'bg-white' : 'bg-white/30'
                   }`}
-                  title={getSlideLabel(index)}
-                >
-                  <span
-                    className={`inline-block w-2 h-2 rounded-full mr-2 transition-all ${
-                      index === currentIndex ? 'bg-white' : 'bg-white/30'
-                    }`}
-                  />
-                  {getSlideLabel(index)}
-                </Link>
-              </li>
-            );
-          })}
+                />
+                {getSlideLabel(index)}
+              </button>
+            </li>
+          ))}
         </ul>
       </div>
 
