@@ -120,8 +120,17 @@ export default function FullScreenSlider({ slides }: FullScreenSliderProps) {
             </div>
           ) : (
             <div
-              className="absolute inset-0 bg-cover bg-top md:bg-center"
-              style={{ backgroundImage: `url(${currentSlide.backgroundImage})` }}
+              className={`absolute inset-0 bg-cover md:bg-center ${
+                currentSlide.mobilePosition === 'left' ? 'bg-left-top' :
+                currentSlide.mobilePosition === 'right' ? 'bg-right-top' :
+                'bg-top'
+              }`}
+              style={{
+                backgroundImage: `url(${currentSlide.backgroundImage})`,
+                ...(currentSlide.mobilePosition && !['left', 'right'].includes(currentSlide.mobilePosition) && {
+                  backgroundPosition: `${currentSlide.mobilePosition} top`
+                })
+              }}
             >
               <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/50 to-black/70" />
             </div>
