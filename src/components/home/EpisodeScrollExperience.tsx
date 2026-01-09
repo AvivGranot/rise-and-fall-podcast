@@ -107,9 +107,7 @@ export default function EpisodeScrollExperience({
       }}
     >
       <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/50 to-black/70" />
-
-      {/* Title at bottom left */}
-      <div className="absolute bottom-24 md:bottom-32 left-6 md:left-24 lg:left-32">
+      <div className="relative h-full flex flex-col justify-end pb-24 md:pb-32 px-6 md:px-24 lg:px-32">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -119,38 +117,29 @@ export default function EpisodeScrollExperience({
             {episode.title}
           </h1>
           {episode.guests && episode.guests.length > 0 && (
-            <p className="text-lg md:text-xl font-light text-white/80 max-w-2xl">
+            <p className="text-lg md:text-xl font-light text-white/80 mb-8 max-w-2xl">
               with {episode.guests.map((g) => g.name).join(', ')}
             </p>
           )}
-        </motion.div>
-      </div>
-
-      {/* Buttons in center */}
-      <div className="absolute inset-0 flex items-center justify-center">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5, duration: 0.5 }}
-          className="flex flex-wrap justify-center gap-4"
-        >
-          <a
-            href={SPOTIFY_LINK}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-primary inline-flex items-center"
-            onClick={handleUserInteraction}
-          >
-            <Play size={16} />
-            Listen Now
-          </a>
-          <Link
-            href={`/episodes/${episode.slug}`}
-            className="btn-primary inline-flex items-center"
-            onClick={handleUserInteraction}
-          >
-            Read More
-          </Link>
+          <div className="flex flex-wrap gap-4">
+            <a
+              href={SPOTIFY_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary inline-flex items-center"
+              onClick={handleUserInteraction}
+            >
+              <Play size={16} />
+              Listen Now
+            </a>
+            <Link
+              href={`/episodes/${episode.slug}`}
+              className="btn-primary inline-flex items-center"
+              onClick={handleUserInteraction}
+            >
+              Read More
+            </Link>
+          </div>
         </motion.div>
       </div>
     </div>
@@ -169,12 +158,11 @@ export default function EpisodeScrollExperience({
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/50 to-black/70" />
       </div>
-      <div className="relative h-full flex flex-col items-center justify-center text-center px-6 md:px-24 lg:px-32">
+      <div className="relative h-full flex flex-col justify-end pb-24 md:pb-32 px-6 md:px-24 lg:px-32">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.5 }}
-          className="flex flex-col items-center"
         >
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-light tracking-wide mb-4">
             {aboutSlide.title}
@@ -206,12 +194,11 @@ export default function EpisodeScrollExperience({
       >
         <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/50 to-black/70" />
       </div>
-      <div className="relative h-full flex flex-col items-center justify-center text-center px-6 md:px-24 lg:px-32">
+      <div className="relative h-full flex flex-col justify-end pb-24 md:pb-32 px-6 md:px-24 lg:px-32">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.5 }}
-          className="flex flex-col items-center"
         >
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-light tracking-wide mb-4">
             {contactSlide.title}
