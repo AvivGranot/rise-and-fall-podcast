@@ -260,7 +260,7 @@ export const slides: Slide[] = [
     title: 'Partnerships & Competition Between Brothers',
     subtitle: 'with the Hagag Brothers',
     backgroundImage: '/rise-and-fall-podcast/episodes/hagag/first.png',
-    mobilePosition: '65%',
+    mobilePosition: '80%',
     ctaText: 'Listen Now',
     ctaLink: '/episodes/hagag-brothers',
   },
