@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown, Play } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Play } from 'lucide-react';
 import Link from 'next/link';
 import { Episode, Slide } from '@/types';
 import { useLanguage } from '@/context/LanguageContext';
@@ -77,15 +77,15 @@ export default function EpisodeScrollExperience({
 
   const slideVariants = {
     enter: (direction: number) => ({
-      y: direction > 0 ? '100%' : '-100%',
+      x: direction > 0 ? '100%' : '-100%',
       opacity: 0,
     }),
     center: {
-      y: 0,
+      x: 0,
       opacity: 1,
     },
     exit: (direction: number) => ({
-      y: direction > 0 ? '-100%' : '100%',
+      x: direction > 0 ? '-100%' : '100%',
       opacity: 0,
     }),
   };
@@ -279,7 +279,7 @@ export default function EpisodeScrollExperience({
           animate="center"
           exit="exit"
           transition={{
-            y: { type: 'spring', stiffness: 300, damping: 30 },
+            x: { type: 'spring', stiffness: 300, damping: 30 },
             opacity: { duration: 0.5 },
           }}
           className="absolute inset-0"
@@ -288,9 +288,19 @@ export default function EpisodeScrollExperience({
         </motion.div>
       </AnimatePresence>
 
-      {/* Center Down Arrow */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-40">
-        <span className="text-sm tabular-nums text-white/70">
+      {/* Navigation Arrows */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-4 z-40">
+        <button
+          onClick={() => {
+            handleUserInteraction();
+            prevSlide();
+          }}
+          className="p-3 border border-white/30 hover:border-white hover:bg-white hover:text-black transition-all"
+          aria-label="Previous slide"
+        >
+          <ChevronLeft size={24} />
+        </button>
+        <span className="text-sm tabular-nums text-white/70 min-w-[60px] text-center">
           {String(currentIndex + 1).padStart(2, '0')} / {String(totalSlides).padStart(2, '0')}
         </span>
         <button
@@ -298,10 +308,10 @@ export default function EpisodeScrollExperience({
             handleUserInteraction();
             nextSlide();
           }}
-          className="p-3 border border-white/30 hover:border-white hover:bg-white hover:text-black transition-all animate-bounce"
+          className="p-3 border border-white/30 hover:border-white hover:bg-white hover:text-black transition-all"
           aria-label="Next slide"
         >
-          <ChevronDown size={24} />
+          <ChevronRight size={24} />
         </button>
       </div>
 
