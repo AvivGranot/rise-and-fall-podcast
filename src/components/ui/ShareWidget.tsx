@@ -67,11 +67,11 @@ export default function ShareWidget() {
   return (
     <div className={`fixed bottom-24 z-50 ${isRTL ? 'left-6' : 'right-6'}`}>
       {/* Share channels - fan out in arc */}
-      <div className={`absolute bottom-14 flex flex-col gap-2 transition-all duration-300 ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
+      <div className={`absolute bottom-10 flex flex-col gap-2 transition-all duration-300 ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
         {shareChannels.map((channel, index) => {
-          const angle = isRTL ? (index * 20) - 40 : -(index * 20) + 40;
-          const translateX = isRTL ? -(Math.sin(angle * Math.PI / 180) * 60) : Math.sin(angle * Math.PI / 180) * 60;
-          const translateY = -Math.cos(angle * Math.PI / 180) * 60 - (index * 8);
+          const angle = isRTL ? (index * 18) - 36 : -(index * 18) + 36;
+          const translateX = isRTL ? -(Math.sin(angle * Math.PI / 180) * 45) : Math.sin(angle * Math.PI / 180) * 45;
+          const translateY = -Math.cos(angle * Math.PI / 180) * 45 - (index * 5);
 
           return (
             <a
