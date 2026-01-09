@@ -83,15 +83,11 @@ export default async function EpisodePage({ params }: PageProps) {
         </div>
       </section>
 
-      {/* Episode Images */}
-      {episode.images && episode.images.length === 2 && (
-        <section className="grid grid-cols-1 md:grid-cols-2 h-screen">
+      {/* Guest Image */}
+      {episode.images && episode.images[1] && (
+        <section className="h-screen">
           <div
-            className="h-[50vh] md:h-full bg-cover bg-center"
-            style={{ backgroundImage: `url(${episode.images[0]})` }}
-          />
-          <div
-            className="h-[50vh] md:h-full bg-cover bg-center"
+            className="h-full bg-cover bg-center"
             style={{ backgroundImage: `url(${episode.images[1]})` }}
           />
         </section>
