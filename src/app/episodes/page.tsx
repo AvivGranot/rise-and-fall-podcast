@@ -33,14 +33,14 @@ export default function EpisodesPage() {
           ))}
         </div>
 
-        {/* Load More */}
-        <div className="text-center mt-16">
+        {/* Load More - hidden on mobile */}
+        <div className="hidden md:block text-center mt-16">
           <button className="btn-primary">Load More Episodes</button>
         </div>
       </section>
 
-      {/* Footer CTA */}
-      <section className="px-6 md:px-12 lg:px-24 py-24 bg-[#111] text-center">
+      {/* Footer CTA - hidden on mobile */}
+      <section className="hidden md:block px-6 md:px-12 lg:px-24 py-24 bg-[#111] text-center">
         <h2 className="text-3xl md:text-4xl font-light mb-4">Never Miss an Episode</h2>
         <p className="text-gray-400 mb-8 max-w-xl mx-auto">
           Subscribe to The Rise & Fall Podcast on your favorite podcast platform and join our newsletter for exclusive content.

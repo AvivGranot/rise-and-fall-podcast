@@ -12,7 +12,7 @@ export default function Footer() {
     <footer className="bg-[#0a0a0a] border-t border-[#222]">
       <div className="px-6 md:px-12 lg:px-24 py-16">
         <div className="max-w-6xl mx-auto">
-          <div className={`grid md:grid-cols-4 gap-12 mb-16 ${isRTL ? 'text-right' : ''}`}>
+          <div className={`grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 mb-16 ${isRTL ? 'text-right' : ''}`}>
             {/* Brand - hidden on mobile */}
             <div className="hidden md:block md:col-span-2">
               <Link href="/" className="text-2xl font-light tracking-widest uppercase mb-6 block">
@@ -25,22 +25,22 @@ export default function Footer() {
 
             {/* Navigation */}
             <div>
-              <h3 className="text-sm uppercase tracking-wider text-gray-500 mb-6">
-                {isRTL ? 'ניווט' : 'Explore'}
+              <h3 className="text-sm uppercase tracking-wider text-gray-500 mb-4 md:mb-6">
+                Explore
               </h3>
-              <ul className="space-y-3">
+              <ul className="space-y-2 md:space-y-3">
                 <li>
-                  <Link href="/episodes" className="text-gray-400 hover:text-white transition-colors">
+                  <Link href="/episodes" className="text-gray-400 hover:text-white transition-colors text-sm md:text-base">
                     {t('nav.episodes')}
                   </Link>
                 </li>
                 <li>
-                  <Link href="/about" className="text-gray-400 hover:text-white transition-colors">
+                  <Link href="/about" className="text-gray-400 hover:text-white transition-colors text-sm md:text-base">
                     {t('nav.about')}
                   </Link>
                 </li>
                 <li>
-                  <Link href="/contact" className="text-gray-400 hover:text-white transition-colors">
+                  <Link href="/contact" className="text-gray-400 hover:text-white transition-colors text-sm md:text-base">
                     {t('nav.contact')}
                   </Link>
                 </li>
@@ -49,10 +49,10 @@ export default function Footer() {
 
             {/* Listen */}
             <div>
-              <h3 className="text-sm uppercase tracking-wider text-gray-500 mb-6">
+              <h3 className="text-sm uppercase tracking-wider text-gray-500 mb-4 md:mb-6">
                 {t('contact.listenOn')}
               </h3>
-              <ul className="space-y-3">
+              <ul className="space-y-2 md:space-y-3">
                 {socialLinks
                   .filter((link) => ['Spotify', 'Apple Podcasts', 'YouTube'].includes(link.platform))
                   .map((link) => (
@@ -61,7 +61,7 @@ export default function Footer() {
                         href={link.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-gray-400 hover:text-white transition-colors"
+                        className="text-gray-400 hover:text-white transition-colors text-sm md:text-base"
                       >
                         {link.platform}
                       </a>
