@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { Play, Clock, Calendar, Share2, ChevronDown } from 'lucide-react';
+import { Play, Clock, Calendar, ChevronDown } from 'lucide-react';
 import { Episode } from '@/types';
 import { useLanguage } from '@/context/LanguageContext';
 import EpisodeCard from './EpisodeCard';
@@ -87,10 +87,6 @@ export default function EpisodeContent({ episode, relatedEpisodes }: EpisodeCont
               {formatDuration(episode.duration, isRTL, t('episode.min'))}
             </span>
             <span>{t('home.episode')} {episode.episodeNumber}</span>
-            <button className={`flex items-center gap-2 hover:text-white transition-colors ${isRTL ? 'mr-auto flex-row-reverse' : 'ml-auto'}`}>
-              <Share2 size={16} />
-              {t('episode.share')}
-            </button>
           </div>
 
           {/* Description */}
