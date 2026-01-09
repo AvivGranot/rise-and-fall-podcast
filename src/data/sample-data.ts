@@ -134,17 +134,21 @@ export const episodes: Episode[] = [
     audioUrl: '/audio/sample.mp3',
     duration: 2640,
     publishedAt: '2025-03-15',
-    artwork: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800',
+    artwork: '/rise-and-fall-podcast/episodes/rosen/rainbow.jpg',
     guests: [
       {
         id: '3',
         name: 'Barak Rosen',
         bio: 'Founder of Acro Real Estate, known for iconic luxury developments',
-        photo: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400',
+        photo: '/rise-and-fall-podcast/episodes/rosen/barak-rosen.jpg',
       },
     ],
     topics: ['Luxury Real Estate', 'Architecture', 'Development', 'Design'],
     featured: false,
+    images: [
+      '/rise-and-fall-podcast/episodes/rosen/rainbow.jpg',
+      '/rise-and-fall-podcast/episodes/rosen/barak-rosen.jpg',
+    ],
   },
   {
     id: '4',
@@ -257,7 +261,7 @@ export const slides: Slide[] = [
     category: 'EPISODE',
     title: 'The Art of Development',
     subtitle: 'with Barak Rosen',
-    backgroundImage: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1920',
+    backgroundImage: '/rise-and-fall-podcast/episodes/rosen/rainbow.jpg',
     ctaText: 'Listen Now',
     ctaLink: '/episodes/art-of-development-rosen',
   },
