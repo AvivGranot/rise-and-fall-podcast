@@ -34,48 +34,11 @@ const episodeStructure = [
   },
 ];
 
-const values = [
-  {
-    title: 'Inspiration',
-    description: 'Every episode is designed to inspire. We showcase the journeys of those who built empires from vision and persistence.',
-  },
-  {
-    title: 'Exclusivity',
-    description: 'Insider access to conversations you won\'t find anywhere else. Unfiltered stories from the top.',
-  },
-  {
-    title: 'Storytelling',
-    description: 'People remember stories, not facts. We craft narratives that resonate and stay with you.',
-  },
-];
-
 export default function AboutPage() {
   return (
     <div className="min-h-screen bg-[#1a1a1a]">
-      {/* Hero Section - Split Images */}
-      <section className="grid grid-cols-1 md:grid-cols-2 h-screen">
-        <div
-          className="h-[50vh] md:h-full bg-cover bg-top relative"
-          style={{ backgroundImage: `url(/rise-and-fall-podcast/about/aviv.jpeg)` }}
-        >
-          <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-          <div className="absolute bottom-8 left-8 text-white">
-            <h3 className="text-2xl font-light">Aviv</h3>
-          </div>
-        </div>
-        <div
-          className="h-[50vh] md:h-full bg-cover bg-top relative"
-          style={{ backgroundImage: `url(/rise-and-fall-podcast/about/leon.jpg)` }}
-        >
-          <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-          <div className="absolute bottom-8 left-8 text-white">
-            <h3 className="text-2xl font-light">Leon</h3>
-          </div>
-        </div>
-      </section>
-
       {/* Mission Section */}
-      <section className="px-6 md:px-12 lg:px-24 py-24 bg-[#111]">
+      <section className="px-6 md:px-12 lg:px-24 py-24 pt-32 bg-[#111]">
         <div className="max-w-4xl">
           <h2 className="text-4xl md:text-5xl font-light mb-8">Personal Interviews with RE Leaders</h2>
           <p className="text-xl text-gray-300 leading-relaxed mb-8">
@@ -149,51 +112,6 @@ export default function AboutPage() {
                 <p className="text-sm text-gray-600 leading-relaxed">{section.description}</p>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Values Section */}
-      <section className="px-6 md:px-12 lg:px-24 py-24 bg-[#111]">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-light mb-4 text-center">Our Approach</h2>
-          <p className="text-center text-gray-400 mb-16 max-w-2xl mx-auto">
-            Psychological elements that make every episode memorable.
-          </p>
-          <div className="grid md:grid-cols-3 gap-12">
-            {values.map((value) => (
-              <div key={value.title} className="text-center">
-                <h3 className="text-2xl font-light mb-4">{value.title}</h3>
-                <p className="text-gray-400 leading-relaxed">{value.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Seasons Overview */}
-      <section className="px-6 md:px-12 lg:px-24 py-24">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-light mb-16 text-center">Season Plan</h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="p-8 bg-[#111] rounded">
-              <p className="text-sm uppercase tracking-wider text-gray-500 mb-2">Season 1</p>
-              <h3 className="text-xl font-light mb-4">Israeli Leaders</h3>
-              <p className="text-gray-400 mb-4">10-12 episodes in Hebrew featuring Israel&apos;s top real estate leaders.</p>
-              <p className="text-sm text-gray-500">Target audience: Israeli RE professionals</p>
-            </div>
-            <div className="p-8 bg-[#111] rounded">
-              <p className="text-sm uppercase tracking-wider text-gray-500 mb-2">Season 2</p>
-              <h3 className="text-xl font-light mb-4">Global Israeli</h3>
-              <p className="text-gray-400 mb-4">5-7 episodes in English with Israeli/Jewish leaders operating globally.</p>
-              <p className="text-sm text-gray-500">Target audience: International RE community</p>
-            </div>
-            <div className="p-8 bg-[#111] rounded">
-              <p className="text-sm uppercase tracking-wider text-gray-500 mb-2">Season 3</p>
-              <h3 className="text-xl font-light mb-4">Global Icons</h3>
-              <p className="text-gray-400 mb-4">5-7 episodes in English with world-renowned architects and developers.</p>
-              <p className="text-sm text-gray-500">Target audience: Global RE industry</p>
-            </div>
           </div>
         </div>
       </section>

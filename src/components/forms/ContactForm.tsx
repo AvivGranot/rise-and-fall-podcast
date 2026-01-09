@@ -123,13 +123,16 @@ export default function ContactForm() {
       </div>
 
       {/* Subject */}
-      <div className="floating-label-input">
+      <div>
+        <label htmlFor="subject" className="block text-sm text-gray-400 mb-2">
+          Subject *
+        </label>
         <select
           name="subject"
           id="subject"
           value={formData.subject}
           onChange={handleChange}
-          className={`${errors.subject ? 'border-red-500' : ''} appearance-none`}
+          className={`w-full px-4 py-4 bg-transparent border ${errors.subject ? 'border-red-500' : 'border-[#333]'} focus:border-white focus:outline-none transition-colors appearance-none`}
           required
         >
           {subjects.map((s) => (
@@ -138,9 +141,6 @@ export default function ContactForm() {
             </option>
           ))}
         </select>
-        <label htmlFor="subject" className={formData.subject ? 'top-[-0.5rem] left-[0.5rem] text-xs bg-[#1a1a1a] px-1' : ''}>
-          Subject *
-        </label>
         {errors.subject && <p className="text-red-500 text-sm mt-1">{errors.subject}</p>}
       </div>
 
