@@ -71,8 +71,7 @@ export default function EpisodeCard({ episode, index = 0 }: EpisodeCardProps) {
         {/* Content */}
         <div>
           <p className="text-xs uppercase tracking-wider text-gray-400 mb-2">
-            {episode.series.name}
-            {episode.season && ` / Season ${episode.season}`}
+            Episode {episode.episodeNumber}
           </p>
           <h3 className="text-lg font-light mb-2 group-hover:text-gray-300 transition-colors">
             {episode.title}
