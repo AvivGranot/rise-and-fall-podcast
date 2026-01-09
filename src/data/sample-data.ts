@@ -61,13 +61,13 @@ export const episodes: Episode[] = [
     audioUrl: '/audio/sample.mp3',
     duration: 2820,
     publishedAt: '2025-03-01',
-    artwork: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800',
+    artwork: '/rise-and-fall-podcast/episodes/azrieli/Azrieli_Web_Hero-2160x1080.webp',
     guests: [
       {
         id: '1',
         name: 'Dana Azrieli',
         bio: 'Chairwoman of Azrieli Group, one of Israel\'s largest real estate companies',
-        photo: '/episodes/azrieli/dana-azrieli.jpg',
+        photo: '/rise-and-fall-podcast/episodes/azrieli/dana-azrieli.jpg',
         socialLinks: [
           { platform: 'LinkedIn', url: 'https://linkedin.com' },
         ],
@@ -84,8 +84,8 @@ export const episodes: Episode[] = [
     ],
     featured: true,
     images: [
-      '/episodes/azrieli/Azrieli_Web_Hero-2160x1080.webp',
-      '/episodes/azrieli/dana-azrieli.jpg',
+      '/rise-and-fall-podcast/episodes/azrieli/Azrieli_Web_Hero-2160x1080.webp',
+      '/rise-and-fall-podcast/episodes/azrieli/dana-azrieli.jpg',
     ],
   },
   {
@@ -233,7 +233,7 @@ export const slides: Slide[] = [
     category: 'EPISODE',
     title: 'Building an Empire: The Azrieli Story',
     subtitle: 'with Dana Azrieli',
-    backgroundImage: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920',
+    backgroundImage: '/rise-and-fall-podcast/episodes/azrieli/Azrieli_Web_Hero-2160x1080.webp',
     ctaText: 'Listen Now',
     ctaLink: '/episodes/building-an-empire-azrieli',
   },
