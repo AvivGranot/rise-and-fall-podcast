@@ -67,7 +67,7 @@ export const episodes: Episode[] = [
         id: '1',
         name: 'Dana Azrieli',
         bio: 'Chairwoman of Azrieli Group, one of Israel\'s largest real estate companies',
-        photo: '/rise-and-fall-podcast/episodes/azrieli/dana-azrieli.webp',
+        photo: '/rise-and-fall-podcast/episodes/azrieli/dana-azrieli.png',
         socialLinks: [
           { platform: 'LinkedIn', url: 'https://linkedin.com' },
         ],
@@ -85,7 +85,7 @@ export const episodes: Episode[] = [
     featured: true,
     images: [
       '/rise-and-fall-podcast/episodes/azrieli/Azrieli_Web_Hero-2160x1080.webp',
-      '/rise-and-fall-podcast/episodes/azrieli/dana-azrieli.webp',
+      '/rise-and-fall-podcast/episodes/azrieli/dana-azrieli.png',
     ],
   },
   {
