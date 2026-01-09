@@ -7,7 +7,7 @@ export default function SpotifyWidget() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Listen on Spotify"
-      className="fixed bottom-6 left-6 z-50 flex items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#1DB954] shadow-lg hover:scale-110 hover:shadow-xl transition-all duration-300 ease-out animate-pulse-subtle"
+      className="fixed bottom-6 right-6 z-50 flex items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#1DB954] shadow-lg hover:scale-110 hover:shadow-xl transition-all duration-300 ease-out animate-pulse-subtle"
     >
       <svg
         className="w-6 h-6 md:w-7 md:h-7"
