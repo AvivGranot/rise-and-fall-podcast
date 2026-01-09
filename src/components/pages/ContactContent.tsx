@@ -1,6 +1,5 @@
 'use client';
 
-import Link from 'next/link';
 import ContactForm from '@/components/forms/ContactForm';
 import { socialLinks } from '@/data/sample-data';
 import { useLanguage } from '@/context/LanguageContext';
@@ -146,71 +145,6 @@ export default function ContactContent() {
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section className="px-6 md:px-12 lg:px-24 py-24 bg-[#111]">
-        <div className={`max-w-4xl mx-auto ${isRTL ? 'text-right' : ''}`}>
-          <h2 className="text-3xl font-light mb-12 text-center">
-            {isRTL ? 'שאלות נפוצות' : 'Frequently Asked Questions'}
-          </h2>
-          <div className="space-y-8">
-            <div>
-              <h3 className="text-xl font-light mb-3">
-                {isRTL ? 'איך אני יכול להיות אורח בתוכנית?' : 'How can I be a guest on the show?'}
-              </h3>
-              <p className="text-gray-400">
-                {isRTL
-                  ? 'אנחנו תמיד מחפשים אורחים מעניינים עם נקודות מבט ייחודיות. השתמשו בטופס יצירת הקשר למעלה ובחרו "הצעת אורח" כנושא. ספרו לנו על עצמכם ומה הייתם רוצים לדון.'
-                  : 'We\'re always looking for interesting guests with unique perspectives. Use the contact form above and select "Guest Inquiry" as the subject. Tell us about yourself and what you\'d like to discuss.'}
-              </p>
-            </div>
-            <div>
-              <h3 className="text-xl font-light mb-3">
-                {isRTL ? 'האם אתם מקבלים חסויות?' : 'Do you accept sponsorships?'}
-              </h3>
-              <p className="text-gray-400">
-                {isRTL
-                  ? 'אנחנו משתפים פעולה עם מותגים שמתאימים לערכים ולקהל שלנו. לפניות חסות, בחרו "שיתוף פעולה" בטופס יצירת הקשר וכללו פרטים על המותג והמטרות שלכם.'
-                  : 'We partner with brands that align with our values and audience. For sponsorship inquiries, please select "Sponsorship" in the contact form and include details about your brand and goals.'}
-              </p>
-            </div>
-            <div>
-              <h3 className="text-xl font-light mb-3">
-                {isRTL ? 'כמה פעמים אתם מוציאים פרקים חדשים?' : 'How often do you release new episodes?'}
-              </h3>
-              <p className="text-gray-400">
-                {isRTL
-                  ? 'אנחנו מוציאים פרקים חדשים כל שבוע, עם תוכן בונוס מדי פעם למנויי הניוזלטר שלנו. הירשמו כדי לא לפספס פרק.'
-                  : 'We release new episodes weekly, with occasional bonus content for our newsletter subscribers. Subscribe to never miss an episode.'}
-              </p>
-            </div>
-            <div>
-              <h3 className="text-xl font-light mb-3">
-                {isRTL ? 'האם אני יכול להציע נושא לתוכנית?' : 'Can I suggest a topic for the show?'}
-              </h3>
-              <p className="text-gray-400">
-                {isRTL
-                  ? 'בהחלט! אנחנו אוהבים לשמוע מהמאזינים שלנו. שלחו לנו את ההצעות שלכם דרך טופס יצירת הקשר, ואנחנו נשקול אותן לפרקים עתידיים.'
-                  : 'Absolutely! We love hearing from our listeners. Send us your topic suggestions through the contact form, and we\'ll consider them for future episodes.'}
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* About CTA */}
-      <section className="px-6 md:px-12 lg:px-24 py-24 text-center">
-        <h2 className="text-3xl md:text-4xl font-light mb-4">
-          {isRTL ? 'רוצים לדעת עוד?' : 'Want to Learn More?'}
-        </h2>
-        <p className="text-gray-400 mb-8 max-w-xl mx-auto">
-          {isRTL
-            ? 'גלו את הסיפור מאחורי פודקאסט The Rise & Fall ומה מניע את התשוקה שלנו לשיחות משמעותיות.'
-            : 'Discover the story behind The Rise & Fall Podcast and what drives our passion for meaningful conversations.'}
-        </p>
-        <Link href="/about" className="btn-primary">
-          {t('nav.about')}
-        </Link>
-      </section>
     </div>
   );
 }
