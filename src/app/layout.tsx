@@ -5,7 +5,6 @@ import Navigation from '@/components/navigation/Navigation';
 import AudioPlayer from '@/components/player/AudioPlayer';
 import Footer from '@/components/ui/Footer';
 import SpotifyWidget from '@/components/ui/SpotifyWidget';
-import LanguageToggle from '@/components/ui/LanguageToggle';
 import { LanguageProvider } from '@/context/LanguageContext';
 
 const geistSans = Geist({
@@ -47,7 +46,6 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <LanguageProvider>
-          <LanguageToggle />
           <Navigation />
           <main>{children}</main>
           <Footer />
