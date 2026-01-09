@@ -94,23 +94,6 @@ export default function AboutPage() {
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-light mb-16 text-center">Meet Your Hosts</h2>
           <div className="grid md:grid-cols-2 gap-16">
-            {/* Leon */}
-            <div className="text-center md:text-left">
-              <div className="relative aspect-[3/4] mb-8 max-w-sm mx-auto md:mx-0">
-                <img
-                  src="/rise-and-fall-podcast/about/leon.jpg"
-                  alt="Leon"
-                  className="w-full h-full object-cover object-top"
-                />
-              </div>
-              <h3 className="text-2xl font-light mb-4">Leon</h3>
-              <p className="text-gray-400 leading-relaxed">
-                A seasoned professional with deep connections in the real estate industry.
-                Leon brings decades of experience and a network that opens doors to Israel&apos;s most influential leaders.
-                His interviewing style balances warmth with incisive questions that reveal the person behind the title.
-              </p>
-            </div>
-
             {/* Aviv */}
             <div className="text-center md:text-left">
               <div className="relative aspect-[3/4] mb-8 max-w-sm mx-auto md:mx-0">
@@ -125,6 +108,23 @@ export default function AboutPage() {
                 The creative force behind the podcast&apos;s production and digital presence.
                 Aviv combines storytelling expertise with technical know-how to create compelling content
                 that resonates across platforms. His fresh perspective ensures every episode connects with modern audiences.
+              </p>
+            </div>
+
+            {/* Leon */}
+            <div className="text-center md:text-left">
+              <div className="relative aspect-[3/4] mb-8 max-w-sm mx-auto md:mx-0">
+                <img
+                  src="/rise-and-fall-podcast/about/leon.jpg"
+                  alt="Leon"
+                  className="w-full h-full object-cover object-top"
+                />
+              </div>
+              <h3 className="text-2xl font-light mb-4">Leon</h3>
+              <p className="text-gray-400 leading-relaxed">
+                A seasoned professional with deep connections in the real estate industry.
+                Leon brings decades of experience and a network that opens doors to Israel&apos;s most influential leaders.
+                His interviewing style balances warmth with incisive questions that reveal the person behind the title.
               </p>
             </div>
           </div>

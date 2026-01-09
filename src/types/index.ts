@@ -56,6 +56,7 @@ export interface Slide {
   title: string;
   subtitle?: string;
   backgroundImage: string;
+  secondaryImage?: string;
   ctaText?: string;
   ctaLink?: string;
 }

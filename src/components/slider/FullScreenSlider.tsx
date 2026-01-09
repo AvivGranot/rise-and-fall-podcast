@@ -106,12 +106,26 @@ export default function FullScreenSlider({ slides }: FullScreenSliderProps) {
           className="absolute inset-0"
         >
           {/* Background Image */}
-          <div
-            className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: `url(${currentSlide.backgroundImage})` }}
-          >
-            <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/50 to-black/70" />
-          </div>
+          {currentSlide.secondaryImage ? (
+            <div className="absolute inset-0 grid grid-cols-2">
+              <div
+                className="bg-cover bg-top"
+                style={{ backgroundImage: `url(${currentSlide.backgroundImage})` }}
+              />
+              <div
+                className="bg-cover bg-top"
+                style={{ backgroundImage: `url(${currentSlide.secondaryImage})` }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/50 to-black/70" />
+            </div>
+          ) : (
+            <div
+              className="absolute inset-0 bg-cover bg-center"
+              style={{ backgroundImage: `url(${currentSlide.backgroundImage})` }}
+            >
+              <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/50 to-black/70" />
+            </div>
+          )}
 
           {/* Content */}
           <div className="relative h-full flex flex-col justify-end pb-24 md:pb-32 px-6 md:px-24 lg:px-32">
