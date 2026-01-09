@@ -22,11 +22,14 @@ export default function HomeContent() {
                 />
               </div>
               <h3 className="text-2xl font-light mb-4">Aviv</h3>
-              <p className="text-gray-400 leading-relaxed">
-                {isRTL
-                  ? 'הכוח היצירתי מאחורי הפקת הפודקאסט והנוכחות הדיגיטלית. אביב משלב מומחיות בסיפורים עם ידע טכני ליצירת תוכן מרתק שמהדהד בכל הפלטפורמות.'
-                  : 'The creative force behind the podcast\'s production and digital presence. Aviv combines storytelling expertise with technical know-how to create compelling content that resonates across platforms.'}
-              </p>
+              <a
+                href="https://www.linkedin.com/in/aviv-granot/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-white transition-colors"
+              >
+                Connect via LinkedIn
+              </a>
             </div>
 
             {/* Leon */}
@@ -39,11 +42,14 @@ export default function HomeContent() {
                 />
               </div>
               <h3 className="text-2xl font-light mb-4">Leon</h3>
-              <p className="text-gray-400 leading-relaxed">
-                {isRTL
-                  ? 'איש מקצוע מנוסה עם קשרים עמוקים בתעשיית הנדל"ן. ליאון מביא עשרות שנות ניסיון ורשת שפותחת דלתות למנהיגים המשפיעים ביותר של ישראל.'
-                  : 'A seasoned professional with deep connections in the real estate industry. Leon brings decades of experience and a network that opens doors to Israel\'s most influential leaders.'}
-              </p>
+              <a
+                href="https://www.linkedin.com/in/leon-avigad-07bb6218/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-white transition-colors"
+              >
+                Connect via LinkedIn
+              </a>
             </div>
           </div>
         </div>
