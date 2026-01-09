@@ -138,7 +138,7 @@ export const episodes: Episode[] = [
       {
         id: '3',
         name: 'Barak Rosen',
-        bio: 'Founder of Acro Real Estate, known for iconic luxury developments',
+        bio: 'Founder of Canada Israel Group',
         photo: '/rise-and-fall-podcast/episodes/rosen/barak-rosen.jpg',
       },
     ],
