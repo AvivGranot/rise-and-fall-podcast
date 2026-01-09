@@ -177,6 +177,7 @@ export const episodes: Episode[] = [
       '/rise-and-fall-podcast/episodes/hagag/first.png',
       '/rise-and-fall-podcast/episodes/hagag/hagag-brothers.jpg',
     ],
+    imagePosition: 'center',
   },
   {
     id: '6',

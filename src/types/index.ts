@@ -17,6 +17,7 @@ export interface Episode {
   chapters?: Chapter[];
   featured: boolean;
   images?: string[];
+  imagePosition?: string;
 }
 
 export interface Series {
