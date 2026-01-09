@@ -16,14 +16,9 @@ export default function MobileEpisodesList({ episodes }: MobileEpisodesListProps
     <div className="min-h-screen bg-[#1a1a1a] pt-20">
       {/* Hero Section */}
       <section className="px-6 py-8">
-        <h1 className={`text-3xl font-light mb-2 ${isRTL ? 'text-right' : ''}`}>
-          The Rise & Fall
+        <h1 className={`text-2xl font-light ${isRTL ? 'text-right' : ''}`}>
+          Personal interviews with RE leaders
         </h1>
-        <p className={`text-gray-400 text-sm ${isRTL ? 'text-right' : ''}`}>
-          {isRTL
-            ? 'ראיונות אישיים עם מנהיגי נדל"ן'
-            : 'Personal interviews with RE leaders'}
-        </p>
       </section>
 
       {/* Episodes Grid */}
