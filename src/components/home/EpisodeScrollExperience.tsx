@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown, Play } from 'lucide-react';
 import Link from 'next/link';
 import { Episode, Slide } from '@/types';
+import { useLanguage } from '@/context/LanguageContext';
 
 interface EpisodeScrollExperienceProps {
   episodes: Episode[];
@@ -23,6 +24,7 @@ export default function EpisodeScrollExperience({
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  const { t, isRTL } = useLanguage();
 
   // Total slides: episodes + about + contact
   const totalSlides = episodes.length + 2;
@@ -90,11 +92,11 @@ export default function EpisodeScrollExperience({
 
   const getSlideLabel = (index: number) => {
     if (index < episodes.length) {
-      return `Episode ${episodes[index].episodeNumber}`;
+      return `${t('home.episode')} ${episodes[index].episodeNumber}`;
     } else if (index === episodes.length) {
-      return 'About';
+      return t('home.about');
     } else {
-      return 'Contact';
+      return t('home.contact');
     }
   };
 
@@ -107,7 +109,7 @@ export default function EpisodeScrollExperience({
       }}
     >
       <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/50 to-black/70" />
-      <div className="relative h-full flex flex-col justify-end pb-24 md:pb-32 px-6 md:px-24 lg:px-32">
+      <div className={`relative h-full flex flex-col justify-end pb-24 md:pb-32 px-6 md:px-24 lg:px-32 ${isRTL ? 'items-end text-right' : ''}`}>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -118,10 +120,10 @@ export default function EpisodeScrollExperience({
           </h1>
           {episode.guests && episode.guests.length > 0 && (
             <p className="text-lg md:text-xl font-light text-white/80 mb-8 max-w-2xl">
-              with {episode.guests.map((g) => g.name).join(', ')}
+              {t('home.with')} {episode.guests.map((g) => g.name).join(', ')}
             </p>
           )}
-          <div className="flex flex-wrap gap-4">
+          <div className={`flex flex-wrap gap-4 ${isRTL ? 'flex-row-reverse' : ''}`}>
             <a
               href={SPOTIFY_LINK}
               target="_blank"
@@ -130,14 +132,14 @@ export default function EpisodeScrollExperience({
               onClick={handleUserInteraction}
             >
               <Play size={16} />
-              Listen Now
+              {t('home.listenNow')}
             </a>
             <Link
               href={`/episodes/${episode.slug}`}
               className="btn-primary inline-flex items-center"
               onClick={handleUserInteraction}
             >
-              Read More
+              {t('home.readMore')}
             </Link>
           </div>
         </motion.div>
@@ -147,7 +149,7 @@ export default function EpisodeScrollExperience({
 
   const renderAboutSlide = () => (
     <>
-      <div className="absolute inset-0 flex flex-col md:flex-row">
+      <div className={`absolute inset-0 flex flex-col md:flex-row ${isRTL ? 'md:flex-row-reverse' : ''}`}>
         <div
           className="flex-1 bg-cover bg-top"
           style={{ backgroundImage: `url(${aboutSlide.backgroundImage})` }}
@@ -158,18 +160,18 @@ export default function EpisodeScrollExperience({
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/50 to-black/70" />
       </div>
-      <div className="relative h-full flex flex-col justify-end pb-24 md:pb-32 px-6 md:px-24 lg:px-32">
+      <div className={`relative h-full flex flex-col justify-end pb-24 md:pb-32 px-6 md:px-24 lg:px-32 ${isRTL ? 'items-end text-right' : ''}`}>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.5 }}
         >
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-light tracking-wide mb-4">
-            {aboutSlide.title}
+            {isRTL ? t('about.meetHosts') : aboutSlide.title}
           </h1>
           {aboutSlide.subtitle && (
             <p className="text-lg md:text-xl font-light text-white/80 mb-8 max-w-2xl">
-              {aboutSlide.subtitle}
+              {isRTL ? t('about.hostIntro') : aboutSlide.subtitle}
             </p>
           )}
           {aboutSlide.ctaText && aboutSlide.ctaLink && (
@@ -178,7 +180,7 @@ export default function EpisodeScrollExperience({
               className="btn-primary inline-flex items-center"
               onClick={handleUserInteraction}
             >
-              {aboutSlide.ctaText}
+              {isRTL ? t('about.learnMore') : aboutSlide.ctaText}
             </Link>
           )}
         </motion.div>
@@ -194,18 +196,18 @@ export default function EpisodeScrollExperience({
       >
         <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/50 to-black/70" />
       </div>
-      <div className="relative h-full flex flex-col justify-end pb-24 md:pb-32 px-6 md:px-24 lg:px-32">
+      <div className={`relative h-full flex flex-col justify-end pb-24 md:pb-32 px-6 md:px-24 lg:px-32 ${isRTL ? 'items-end text-right' : ''}`}>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.5 }}
         >
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-light tracking-wide mb-4">
-            {contactSlide.title}
+            {isRTL ? 'הצטרפו לשיחה' : contactSlide.title}
           </h1>
           {contactSlide.subtitle && (
             <p className="text-lg md:text-xl font-light text-white/80 mb-8 max-w-2xl">
-              {contactSlide.subtitle}
+              {isRTL ? 'הירשמו וקבלו גישה בלעדית' : contactSlide.subtitle}
             </p>
           )}
           {contactSlide.ctaText && contactSlide.ctaLink && (
@@ -214,7 +216,7 @@ export default function EpisodeScrollExperience({
               className="btn-primary inline-flex items-center"
               onClick={handleUserInteraction}
             >
-              {contactSlide.ctaText}
+              {isRTL ? t('episode.subscribeNow') : contactSlide.ctaText}
             </Link>
           )}
         </motion.div>
@@ -235,7 +237,7 @@ export default function EpisodeScrollExperience({
   return (
     <div className="relative h-screen w-full overflow-hidden">
       {/* Mini Navigation Sidebar */}
-      <div className="fixed left-6 top-1/2 -translate-y-1/2 z-40 hidden lg:block">
+      <div className={`fixed top-1/2 -translate-y-1/2 z-40 hidden lg:block ${isRTL ? 'right-6' : 'left-6'}`}>
         <ul className="space-y-4">
           {[...episodes, { id: 'about' }, { id: 'contact' }].map((item, index) => (
             <li key={item.id}>
@@ -244,7 +246,9 @@ export default function EpisodeScrollExperience({
                   handleUserInteraction();
                   goToSlide(index);
                 }}
-                className={`block text-xs uppercase tracking-wider transition-all duration-300 text-left max-w-[120px] truncate ${
+                className={`block text-xs uppercase tracking-wider transition-all duration-300 max-w-[120px] truncate ${
+                  isRTL ? 'text-right' : 'text-left'
+                } ${
                   index === currentIndex
                     ? 'text-white opacity-100'
                     : 'text-white/50 hover:text-white/80'
@@ -252,7 +256,9 @@ export default function EpisodeScrollExperience({
                 title={getSlideLabel(index)}
               >
                 <span
-                  className={`inline-block w-2 h-2 rounded-full mr-2 transition-all ${
+                  className={`inline-block w-2 h-2 rounded-full transition-all ${
+                    isRTL ? 'ml-2' : 'mr-2'
+                  } ${
                     index === currentIndex ? 'bg-white' : 'bg-white/30'
                   }`}
                 />

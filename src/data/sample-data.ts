@@ -164,7 +164,7 @@ export const episodes: Episode[] = [
     guests: [
       {
         id: '5',
-        name: 'Hagag Brothers',
+        name: 'The Hagag Brothers',
         bio: 'Real estate developers known for their unique family partnership',
         photo: '/rise-and-fall-podcast/episodes/hagag/hagag-brothers.jpg',
       },

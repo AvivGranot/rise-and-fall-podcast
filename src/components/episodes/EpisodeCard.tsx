@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Play, Clock } from 'lucide-react';
 import { Episode } from '@/types';
+import { useLanguage } from '@/context/LanguageContext';
 
 interface EpisodeCardProps {
   episode: Episode;
@@ -13,10 +14,11 @@ interface EpisodeCardProps {
 
 export default function EpisodeCard({ episode, index = 0 }: EpisodeCardProps) {
   const [isHovered, setIsHovered] = useState(false);
+  const { t, isRTL } = useLanguage();
 
   const formatDuration = (seconds: number) => {
     const mins = Math.floor(seconds / 60);
-    return `${mins} min`;
+    return `${mins} ${t('episode.min')}`;
   };
 
   return (
@@ -62,16 +64,16 @@ export default function EpisodeCard({ episode, index = 0 }: EpisodeCardProps) {
         </div>
 
         {/* Content */}
-        <div>
+        <div className={isRTL ? 'text-right' : ''}>
           <p className="text-xs uppercase tracking-wider text-gray-400 mb-2">
-            Episode {episode.episodeNumber}
+            {t('home.episode')} {episode.episodeNumber}
           </p>
           <h3 className="text-lg font-light mb-2 group-hover:text-gray-300 transition-colors">
             {episode.title}
           </h3>
           {episode.guests && episode.guests.length > 0 && (
             <p className="text-sm text-gray-400">
-              with {episode.guests.map((g) => g.name).join(', ')}
+              {t('home.with')} {episode.guests.map((g) => g.name).join(', ')}
             </p>
           )}
         </div>

@@ -3,8 +3,10 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Send, Loader2 } from 'lucide-react';
+import { useLanguage } from '@/context/LanguageContext';
 
 export default function ContactForm() {
+  const { t, isRTL } = useLanguage();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -16,7 +18,13 @@ export default function ContactForm() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
 
-  const subjects = [
+  const subjects = isRTL ? [
+    { value: '', label: t('contact.selectSubject') },
+    { value: 'guest', label: t('contact.guestSuggestion') },
+    { value: 'sponsorship', label: t('contact.collaboration') },
+    { value: 'feedback', label: t('contact.feedback') },
+    { value: 'other', label: t('contact.other') },
+  ] : [
     { value: '', label: 'Select a subject' },
     { value: 'guest', label: 'Guest Inquiry' },
     { value: 'sponsorship', label: 'Sponsorship' },
@@ -73,9 +81,11 @@ export default function ContactForm() {
         <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-6">
           <Send className="w-8 h-8" />
         </div>
-        <h3 className="text-2xl font-light mb-4">Message Sent</h3>
+        <h3 className="text-2xl font-light mb-4">
+          {isRTL ? 'ההודעה נשלחה' : 'Message Sent'}
+        </h3>
         <p className="text-gray-400 mb-8">
-          Thank you for reaching out. We&apos;ll get back to you soon.
+          {isRTL ? 'תודה שפניתם אלינו. נחזור אליכם בקרוב.' : 'Thank you for reaching out. We\'ll get back to you soon.'}
         </p>
         <button
           onClick={() => {
@@ -84,14 +94,14 @@ export default function ContactForm() {
           }}
           className="btn-primary"
         >
-          Send Another Message
+          {isRTL ? 'שלח הודעה נוספת' : 'Send Another Message'}
         </button>
       </motion.div>
     );
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
+    <form onSubmit={handleSubmit} className={`space-y-6 ${isRTL ? 'text-right' : ''}`}>
       {/* Name */}
       <div className="floating-label-input">
         <input
@@ -101,9 +111,9 @@ export default function ContactForm() {
           value={formData.name}
           onChange={handleChange}
           placeholder=" "
-          className={errors.name ? 'border-red-500' : ''}
+          className={`${errors.name ? 'border-red-500' : ''} ${isRTL ? 'text-right' : ''}`}
         />
-        <label htmlFor="name">Name *</label>
+        <label htmlFor="name" className={isRTL ? 'right-4 left-auto' : ''}>{t('contact.name')} *</label>
         {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name}</p>}
       </div>
 
@@ -116,23 +126,23 @@ export default function ContactForm() {
           value={formData.email}
           onChange={handleChange}
           placeholder=" "
-          className={errors.email ? 'border-red-500' : ''}
+          className={`${errors.email ? 'border-red-500' : ''} ${isRTL ? 'text-right' : ''}`}
         />
-        <label htmlFor="email">Email *</label>
+        <label htmlFor="email" className={isRTL ? 'right-4 left-auto' : ''}>{t('contact.email')} *</label>
         {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
       </div>
 
       {/* Subject */}
       <div>
         <label htmlFor="subject" className="block text-sm text-gray-400 mb-2">
-          Subject *
+          {t('contact.subject')} *
         </label>
         <select
           name="subject"
           id="subject"
           value={formData.subject}
           onChange={handleChange}
-          className={`w-full px-4 py-4 bg-transparent border ${errors.subject ? 'border-red-500' : 'border-[#333]'} focus:border-white focus:outline-none transition-colors appearance-none`}
+          className={`w-full px-4 py-4 bg-transparent border ${errors.subject ? 'border-red-500' : 'border-[#333]'} focus:border-white focus:outline-none transition-colors appearance-none ${isRTL ? 'text-right' : ''}`}
           required
         >
           {subjects.map((s) => (
@@ -153,14 +163,14 @@ export default function ContactForm() {
           onChange={handleChange}
           placeholder=" "
           rows={5}
-          className={errors.message ? 'border-red-500' : ''}
+          className={`${errors.message ? 'border-red-500' : ''} ${isRTL ? 'text-right' : ''}`}
         />
-        <label htmlFor="message">Message *</label>
+        <label htmlFor="message" className={isRTL ? 'right-4 left-auto' : ''}>{t('contact.message')} *</label>
         {errors.message && <p className="text-red-500 text-sm mt-1">{errors.message}</p>}
       </div>
 
       {/* Privacy Checkbox */}
-      <div className="flex items-start gap-3">
+      <div className={`flex items-start gap-3 ${isRTL ? 'flex-row-reverse' : ''}`}>
         <input
           type="checkbox"
           name="privacy"
@@ -170,8 +180,9 @@ export default function ContactForm() {
           className="mt-1 w-4 h-4 accent-white"
         />
         <label htmlFor="privacy" className="text-sm text-gray-400">
-          I agree to the privacy policy and consent to having my data stored for the purpose of
-          responding to my inquiry. *
+          {isRTL
+            ? 'אני מסכים/ה למדיניות הפרטיות ומאשר/ת שהנתונים שלי יישמרו לצורך מענה לפנייתי. *'
+            : 'I agree to the privacy policy and consent to having my data stored for the purpose of responding to my inquiry. *'}
         </label>
       </div>
       {errors.privacy && <p className="text-red-500 text-sm">{errors.privacy}</p>}
@@ -180,17 +191,17 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="btn-primary w-full justify-center disabled:opacity-50 disabled:cursor-not-allowed"
+        className={`btn-primary w-full justify-center disabled:opacity-50 disabled:cursor-not-allowed ${isRTL ? 'flex-row-reverse' : ''}`}
       >
         {isSubmitting ? (
           <>
             <Loader2 className="w-4 h-4 animate-spin" />
-            Sending...
+            {isRTL ? 'שולח...' : 'Sending...'}
           </>
         ) : (
           <>
             <Send className="w-4 h-4" />
-            Send Message
+            {t('contact.send')}
           </>
         )}
       </button>
