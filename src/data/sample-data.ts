@@ -190,7 +190,7 @@ export const episodes: Episode[] = [
     audioUrl: '/audio/sample.mp3',
     duration: 3000,
     publishedAt: '2025-09-01',
-    artwork: '/rise-and-fall-podcast/episodes/habs/mandarin.jpeg',
+    artwork: '/rise-and-fall-podcast/episodes/habs/mandarin.webp',
     guests: [
       {
         id: '6',
@@ -202,7 +202,7 @@ export const episodes: Episode[] = [
     topics: ['Real Estate', 'Resilience', 'Leadership', 'Comeback'],
     featured: true,
     images: [
-      '/rise-and-fall-podcast/episodes/habs/mandarin.jpeg',
+      '/rise-and-fall-podcast/episodes/habs/mandarin.webp',
       '/rise-and-fall-podcast/episodes/habs/herzl-habs.webp',
     ],
   },
@@ -265,7 +265,7 @@ export const slides: Slide[] = [
     category: 'EPISODE',
     title: 'The Greatest Comeback',
     subtitle: 'with Herzl Habs',
-    backgroundImage: '/rise-and-fall-podcast/episodes/habs/mandarin.jpeg',
+    backgroundImage: '/rise-and-fall-podcast/episodes/habs/mandarin.webp',
     ctaText: 'Listen Now',
     ctaLink: '/episodes/herzl-habs-greatest-comeback',
   },
