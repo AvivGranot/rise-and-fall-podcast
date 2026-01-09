@@ -52,19 +52,25 @@ const values = [
 export default function AboutPage() {
   return (
     <div className="min-h-screen bg-[#1a1a1a]">
-      {/* Hero Section */}
-      <section className="relative h-screen flex items-end">
+      {/* Hero Section - Split Images */}
+      <section className="grid grid-cols-1 md:grid-cols-2 h-screen">
         <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: `url(https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920)`,
-          }}
+          className="h-[50vh] md:h-full bg-cover bg-top relative"
+          style={{ backgroundImage: `url(/rise-and-fall-podcast/about/aviv.jpeg)` }}
         >
-          <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a] via-[#1a1a1a]/70 to-black/30" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+          <div className="absolute bottom-8 left-8 text-white">
+            <h3 className="text-2xl font-light">Aviv</h3>
+          </div>
         </div>
-        <div className="relative z-10 px-6 md:px-12 lg:px-24 pb-24">
-          <p className="text-sm uppercase tracking-[0.3em] text-white/70 mb-4">About</p>
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-light">The Rise & Fall</h1>
+        <div
+          className="h-[50vh] md:h-full bg-cover bg-top relative"
+          style={{ backgroundImage: `url(/rise-and-fall-podcast/about/leon.jpg)` }}
+        >
+          <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+          <div className="absolute bottom-8 left-8 text-white">
+            <h3 className="text-2xl font-light">Leon</h3>
+          </div>
         </div>
       </section>
 
@@ -92,9 +98,9 @@ export default function AboutPage() {
             <div className="text-center md:text-left">
               <div className="relative aspect-[3/4] mb-8 max-w-sm mx-auto md:mx-0">
                 <img
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800"
+                  src="/rise-and-fall-podcast/about/leon.jpg"
                   alt="Leon"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover object-top"
                 />
               </div>
               <h3 className="text-2xl font-light mb-4">Leon</h3>
@@ -109,9 +115,9 @@ export default function AboutPage() {
             <div className="text-center md:text-left">
               <div className="relative aspect-[3/4] mb-8 max-w-sm mx-auto md:mx-0">
                 <img
-                  src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=800"
+                  src="/rise-and-fall-podcast/about/aviv.jpeg"
                   alt="Aviv"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover object-top"
                 />
               </div>
               <h3 className="text-2xl font-light mb-4">Aviv</h3>
