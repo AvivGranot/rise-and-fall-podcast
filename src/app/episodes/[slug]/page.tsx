@@ -88,10 +88,17 @@ export default async function EpisodePage({ params }: PageProps) {
 
       {/* Guest Image */}
       {episode.images && episode.images[1] && (
-        <section className="h-screen">
+        <section className={episode.imagePosition === 'horizontal' ? 'h-[50vh] md:h-[60vh]' : 'h-screen'}>
           <div
-            className={`h-full bg-cover ${episode.imagePosition === 'center' ? 'bg-center' : 'bg-top'}`}
-            style={{ backgroundImage: `url(${episode.images[1]})` }}
+            className={`h-full bg-cover ${
+              episode.imagePosition === 'center' ? 'bg-center' :
+              episode.imagePosition === 'horizontal' ? 'bg-center' :
+              'bg-top'
+            }`}
+            style={{
+              backgroundImage: `url(${episode.images[1]})`,
+              ...(episode.imagePosition === 'horizontal' && { backgroundSize: 'contain', backgroundRepeat: 'no-repeat', backgroundColor: '#1a1a1a' })
+            }}
           />
         </section>
       )}
