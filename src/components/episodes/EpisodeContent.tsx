@@ -58,19 +58,16 @@ export default function EpisodeContent({ episode, relatedEpisodes }: EpisodeCont
         </div>
       </section>
 
-      {/* Guest Speaker Image */}
+      {/* Guest Speaker Image - Always horizontal */}
       {episode.images && episode.images[1] && (
-        <section className={episode.imagePosition === 'horizontal' ? 'h-[50vh] md:h-[70vh]' : 'h-screen'}>
+        <section className="h-[50vh] md:h-[70vh]">
           <div
-            className={`h-full bg-cover ${
-              episode.imagePosition === 'center' ? 'bg-center' :
-              episode.imagePosition === 'horizontal' ? 'bg-center' :
-              episode.imagePosition === 'right' ? 'bg-right-top' :
-              'bg-top'
-            }`}
+            className="h-full bg-center"
             style={{
               backgroundImage: `url(${episode.images[1]})`,
-              ...(episode.imagePosition === 'horizontal' && { backgroundSize: 'contain', backgroundRepeat: 'no-repeat', backgroundColor: '#1a1a1a' })
+              backgroundSize: 'contain',
+              backgroundRepeat: 'no-repeat',
+              backgroundColor: '#1a1a1a'
             }}
           />
         </section>

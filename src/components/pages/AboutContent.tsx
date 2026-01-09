@@ -34,11 +34,14 @@ export default function AboutContent() {
                 />
               </div>
               <h3 className="text-2xl font-light mb-4">Aviv</h3>
-              <p className="text-gray-400 leading-relaxed">
-                {isRTL
-                  ? 'הכוח היצירתי מאחורי הפקת הפודקאסט והנוכחות הדיגיטלית. אביב משלב מומחיות בסיפורים עם ידע טכני ליצירת תוכן מרתק שמהדהד בכל הפלטפורמות. הפרספקטיבה הרעננה שלו מבטיחה שכל פרק מתחבר לקהלים מודרניים.'
-                  : 'The creative force behind the podcast\'s production and digital presence. Aviv combines storytelling expertise with technical know-how to create compelling content that resonates across platforms. His fresh perspective ensures every episode connects with modern audiences.'}
-              </p>
+              <a
+                href="https://www.linkedin.com/in/aviv-granot/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-white transition-colors"
+              >
+                Connect via LinkedIn
+              </a>
             </div>
 
             {/* Leon */}
@@ -51,11 +54,14 @@ export default function AboutContent() {
                 />
               </div>
               <h3 className="text-2xl font-light mb-4">Leon</h3>
-              <p className="text-gray-400 leading-relaxed">
-                {isRTL
-                  ? 'איש מקצוע מנוסה עם קשרים עמוקים בתעשיית הנדל"ן. ליאון מביא עשרות שנות ניסיון ורשת שפותחת דלתות למנהיגים המשפיעים ביותר של ישראל. סגנון הראיון שלו מאזן בין חום לשאלות חדות שחושפות את האדם מאחורי התואר.'
-                  : 'A seasoned professional with deep connections in the real estate industry. Leon brings decades of experience and a network that opens doors to Israel\'s most influential leaders. His interviewing style balances warmth with incisive questions that reveal the person behind the title.'}
-              </p>
+              <a
+                href="https://www.linkedin.com/in/leon-avigad-07bb6218/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-white transition-colors"
+              >
+                Connect via LinkedIn
+              </a>
             </div>
           </div>
         </div>
