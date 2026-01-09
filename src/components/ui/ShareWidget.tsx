@@ -57,7 +57,7 @@ export default function ShareWidget() {
   return (
     <div className={`fixed bottom-24 z-50 ${isRTL ? 'left-6' : 'right-6'}`}>
       {/* Share channels - column layout */}
-      <div className={`absolute bottom-14 flex flex-col gap-3 transition-all duration-300 ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
+      <div className={`absolute bottom-18 left-1 md:left-2 flex flex-col gap-3 transition-all duration-300 ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
         {shareChannels.map((channel, index) => (
           <a
             key={channel.name}
