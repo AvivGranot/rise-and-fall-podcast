@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import EpisodeCard from '@/components/episodes/EpisodeCard';
-import { episodes, series } from '@/data/sample-data';
+import { episodes } from '@/data/sample-data';
 
 export const metadata: Metadata = {
   title: 'Episodes | The Rise & Fall Podcast',
@@ -21,25 +21,7 @@ export default function EpisodesPage() {
           <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a] via-[#1a1a1a]/60 to-transparent" />
         </div>
         <div className="relative z-10 px-6 md:px-12 lg:px-24 pb-12">
-          <p className="text-sm uppercase tracking-[0.3em] text-white/70 mb-4">All Episodes</p>
           <h1 className="text-4xl md:text-6xl font-light">Episodes</h1>
-        </div>
-      </section>
-
-      {/* Filter Bar */}
-      <section className="px-6 md:px-12 lg:px-24 py-8 border-b border-[#333]">
-        <div className="flex flex-wrap gap-4">
-          <button className="px-4 py-2 border border-white text-white text-sm uppercase tracking-wider">
-            All
-          </button>
-          {series.map((s) => (
-            <button
-              key={s.id}
-              className="px-4 py-2 border border-[#333] text-gray-400 hover:border-white hover:text-white transition-colors text-sm uppercase tracking-wider"
-            >
-              {s.name}
-            </button>
-          ))}
         </div>
       </section>
 
