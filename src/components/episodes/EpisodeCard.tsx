@@ -37,6 +37,7 @@ export default function EpisodeCard({ episode, index = 0 }: EpisodeCardProps) {
             src={episode.artwork}
             alt={episode.title}
             className="w-full h-full object-cover"
+            style={{ objectPosition: episode.artworkPosition ? `${episode.artworkPosition} center` : 'center' }}
             animate={{ scale: isHovered ? 1.05 : 1 }}
             transition={{ duration: 0.4 }}
           />
