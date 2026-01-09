@@ -67,7 +67,7 @@ export const episodes: Episode[] = [
         id: '1',
         name: 'Dana Azrieli',
         bio: 'Chairwoman of Azrieli Group, one of Israel\'s largest real estate companies',
-        photo: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400',
+        photo: '/episodes/azrieli/dana-azrieli.jpg',
         socialLinks: [
           { platform: 'LinkedIn', url: 'https://linkedin.com' },
         ],

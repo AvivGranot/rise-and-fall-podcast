@@ -68,18 +68,14 @@ export default async function EpisodePage({ params }: PageProps) {
           <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a] via-[#1a1a1a]/70 to-black/30" />
         </div>
         <div className="relative z-10 px-6 md:px-12 lg:px-24 pb-24 w-full">
-          <p className="text-sm uppercase tracking-[0.3em] text-white/70 mb-4">
-            {episode.series.name}
-            {episode.season && ` / Season ${episode.season}`}
-          </p>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-light mb-4 max-w-4xl">
             {episode.title}
+            {episode.guests && episode.guests.length > 0 && (
+              <span className="block text-2xl md:text-3xl text-white/80 mt-4">
+                with {episode.guests.map((g) => g.name).join(', ')}
+              </span>
+            )}
           </h1>
-          {episode.guests && episode.guests.length > 0 && (
-            <p className="text-xl md:text-2xl text-white/80 mb-8">
-              with {episode.guests.map((g) => g.name).join(', ')}
-            </p>
-          )}
           <button className="btn-primary">
             <Play size={16} />
             Play Episode
@@ -198,7 +194,9 @@ export default async function EpisodePage({ params }: PageProps) {
           {episode.guests && episode.guests.length > 0 && (
             <div className="mb-12">
               <h2 className="text-2xl font-light mb-6">
-                {episode.guests.length === 1 ? 'About the Guest' : 'About the Guests'}
+                {episode.guests.length === 1
+                  ? `About ${episode.guests[0].name.split(' ')[0]}`
+                  : 'About the Guests'}
               </h2>
               <div className="space-y-8">
                 {episode.guests.map((guest) => (
