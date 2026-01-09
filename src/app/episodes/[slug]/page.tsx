@@ -53,9 +53,26 @@ export default async function EpisodePage({ params }: PageProps) {
     notFound();
   }
 
-  const relatedEpisodes = episodes
-    .filter((e) => e.id !== episode.id && e.series.id === episode.series.id)
-    .slice(0, 3);
+  // Get related episodes based on episode number
+  const getRelatedEpisodes = () => {
+    const epNum = episode.episodeNumber;
+    let relatedNums: number[] = [];
+
+    if (epNum === 1) {
+      relatedNums = [2, 3];
+    } else if (epNum === 5) {
+      relatedNums = [3, 4];
+    } else {
+      // For episodes 2, 3, 4: show previous and next
+      relatedNums = [epNum - 1, epNum + 1];
+    }
+
+    return episodes
+      .filter((e) => relatedNums.includes(e.episodeNumber))
+      .sort((a, b) => a.episodeNumber - b.episodeNumber);
+  };
+
+  const relatedEpisodes = getRelatedEpisodes();
 
   return (
     <div className="min-h-screen bg-[#1a1a1a]">
