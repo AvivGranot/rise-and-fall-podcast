@@ -107,13 +107,13 @@ export default function FullScreenSlider({ slides }: FullScreenSliderProps) {
         >
           {/* Background Image */}
           {currentSlide.secondaryImage ? (
-            <div className="absolute inset-0 grid grid-cols-2">
+            <div className="absolute inset-0 flex flex-col md:flex-row">
               <div
-                className="bg-cover bg-top"
+                className="flex-1 bg-cover bg-top"
                 style={{ backgroundImage: `url(${currentSlide.backgroundImage})` }}
               />
               <div
-                className="bg-cover bg-top"
+                className="flex-1 bg-cover bg-top"
                 style={{ backgroundImage: `url(${currentSlide.secondaryImage})` }}
               />
               <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/50 to-black/70" />
