@@ -1,4 +1,4 @@
-import { Episode, Series, Slide } from '@/types';
+import { Episode, Series, Slide, NavItem } from '@/types';
 
 export const series: Series[] = [
   {
@@ -226,7 +226,7 @@ export const slides: Slide[] = [
   {
     id: '2',
     type: 'episode',
-    category: 'FEATURED EPISODE',
+    category: 'EPISODE',
     title: 'Building an Empire: The Azrieli Story',
     subtitle: 'with Dana Azrieli',
     backgroundImage: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920',
@@ -235,36 +235,56 @@ export const slides: Slide[] = [
   },
   {
     id: '3',
-    type: 'show',
-    category: 'SEASON 1',
-    title: 'Israeli Leaders',
-    subtitle: 'In-depth Hebrew interviews with Israel\'s RE titans',
-    backgroundImage: 'https://images.unsplash.com/photo-1467226632440-65f0b4957563?w=1920',
-    ctaText: 'Explore Season',
-    ctaLink: '/shows/season-1-israel',
+    type: 'episode',
+    category: 'EPISODE',
+    title: 'From Vision to Reality',
+    subtitle: 'with David Fattal',
+    backgroundImage: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1920',
+    ctaText: 'Listen Now',
+    ctaLink: '/episodes/from-vision-to-reality-fattal',
   },
   {
     id: '4',
-    type: 'show',
-    category: 'SEASON 2',
-    title: 'Global Israeli Leaders',
-    subtitle: 'Israeli visionaries on the world stage',
-    backgroundImage: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=1920',
-    ctaText: 'Explore Season',
-    ctaLink: '/shows/season-2-global-israeli',
+    type: 'episode',
+    category: 'EPISODE',
+    title: 'The Art of Development',
+    subtitle: 'with Barak Rosen',
+    backgroundImage: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1920',
+    ctaText: 'Listen Now',
+    ctaLink: '/episodes/art-of-development-rosen',
   },
   {
     id: '5',
-    type: 'show',
-    category: 'SEASON 3',
-    title: 'Global Icons',
-    subtitle: 'World-renowned architects and developers',
-    backgroundImage: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1920',
-    ctaText: 'Explore Season',
-    ctaLink: '/shows/season-3-global',
+    type: 'episode',
+    category: 'EPISODE',
+    title: 'Banking on Real Estate',
+    subtitle: 'with Rakefet Russak-Aminoach',
+    backgroundImage: 'https://images.unsplash.com/photo-1554469384-e58fac16e23a?w=1920',
+    ctaText: 'Listen Now',
+    ctaLink: '/episodes/banking-on-real-estate-russak',
   },
   {
     id: '6',
+    type: 'episode',
+    category: 'EPISODE',
+    title: 'Global Vision, Israeli Roots',
+    subtitle: 'with David Zisser',
+    backgroundImage: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=1920',
+    ctaText: 'Listen Now',
+    ctaLink: '/episodes/global-vision-zisser',
+  },
+  {
+    id: '7',
+    type: 'episode',
+    category: 'EPISODE',
+    title: 'Designing the Future',
+    subtitle: 'with Bjarke Ingels',
+    backgroundImage: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1920',
+    ctaText: 'Listen Now',
+    ctaLink: '/episodes/designing-future-bjarke',
+  },
+  {
+    id: '8',
     type: 'about',
     category: 'ABOUT',
     title: 'Meet Your Hosts',
@@ -274,7 +294,7 @@ export const slides: Slide[] = [
     ctaLink: '/about',
   },
   {
-    id: '7',
+    id: '9',
     type: 'contact',
     category: 'CONNECT',
     title: 'Join the Conversation',
@@ -285,25 +305,8 @@ export const slides: Slide[] = [
   },
 ];
 
-export const navItems = [
-  {
-    label: 'Seasons',
-    href: '/shows',
-    children: [
-      { label: 'Season 1: Israel', href: '/shows/season-1-israel' },
-      { label: 'Season 2: Global Israeli', href: '/shows/season-2-global-israeli' },
-      { label: 'Season 3: Global Leaders', href: '/shows/season-3-global' },
-    ],
-  },
-  {
-    label: 'Episodes',
-    href: '/episodes',
-    children: [
-      { label: 'All Episodes', href: '/episodes' },
-      { label: 'By Season', href: '/episodes?filter=season' },
-      { label: 'By Guest', href: '/episodes?filter=guest' },
-    ],
-  },
+export const navItems: NavItem[] = [
+  { label: 'Episodes', href: '/episodes' },
   { label: 'About', href: '/about' },
   { label: 'Contact', href: '/contact' },
 ];
