@@ -87,6 +87,7 @@ export const episodes: Episode[] = [
       '/rise-and-fall-podcast/episodes/azrieli/Azrieli_Web_Hero-2160x1080.webp',
       '/rise-and-fall-podcast/episodes/azrieli/dana-azrieli.png',
     ],
+    artworkPosition: '30%',
   },
   {
     id: '2',
@@ -178,6 +179,7 @@ export const episodes: Episode[] = [
       '/rise-and-fall-podcast/episodes/hagag/hagag-brothers.jpg',
     ],
     imagePosition: 'center',
+    artworkPosition: '65%',
   },
   {
     id: '6',
@@ -227,7 +229,7 @@ export const slides: Slide[] = [
     title: 'Building an Empire: The Azrieli Story',
     subtitle: 'with Dana Azrieli',
     backgroundImage: '/rise-and-fall-podcast/episodes/azrieli/Azrieli_Web_Hero-2160x1080.webp',
-    mobilePosition: 'left',
+    mobilePosition: '30%',
     ctaText: 'Listen Now',
     ctaLink: '/episodes/building-an-empire-azrieli',
   },
@@ -258,7 +260,7 @@ export const slides: Slide[] = [
     title: 'Partnerships & Competition Between Brothers',
     subtitle: 'with the Hagag Brothers',
     backgroundImage: '/rise-and-fall-podcast/episodes/hagag/first.png',
-    mobilePosition: 'right',
+    mobilePosition: '65%',
     ctaText: 'Listen Now',
     ctaLink: '/episodes/hagag-brothers',
   },

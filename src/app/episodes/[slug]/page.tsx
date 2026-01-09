@@ -62,8 +62,11 @@ export default async function EpisodePage({ params }: PageProps) {
       {/* Hero Section */}
       <section className="relative h-screen flex items-end">
         <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${episode.artwork})` }}
+          className="absolute inset-0 bg-cover"
+          style={{
+            backgroundImage: `url(${episode.artwork})`,
+            backgroundPosition: episode.artworkPosition ? `${episode.artworkPosition} top` : 'center'
+          }}
         >
           <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a] via-[#1a1a1a]/70 to-black/30" />
         </div>

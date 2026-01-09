@@ -18,6 +18,7 @@ export interface Episode {
   featured: boolean;
   images?: string[];
   imagePosition?: string;
+  artworkPosition?: string;
 }
 
 export interface Series {
