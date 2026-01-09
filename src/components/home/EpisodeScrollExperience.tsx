@@ -50,7 +50,7 @@ export default function EpisodeScrollExperience({
 
     const interval = setInterval(() => {
       nextSlide();
-    }, 6000);
+    }, 4000);
 
     return () => clearInterval(interval);
   }, [isAutoPlaying, nextSlide]);
