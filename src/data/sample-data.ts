@@ -83,6 +83,10 @@ export const episodes: Episode[] = [
       { title: 'Quick Fire Questions', startTime: 2520 },
     ],
     featured: true,
+    images: [
+      '/episodes/azrieli/Azrieli_Web_Hero-2160x1080.webp',
+      '/episodes/azrieli/dana-azrieli.jpg',
+    ],
   },
   {
     id: '2',
