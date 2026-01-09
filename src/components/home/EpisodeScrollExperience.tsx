@@ -151,12 +151,12 @@ export default function EpisodeScrollExperience({
     <>
       <div className={`absolute inset-0 flex flex-col md:flex-row ${isRTL ? 'md:flex-row-reverse' : ''}`}>
         <div
-          className="flex-1 bg-cover bg-center"
-          style={{ backgroundImage: `url(${aboutSlide.backgroundImage})`, backgroundColor: '#1a1a1a' }}
+          className="flex-1 bg-cover bg-top"
+          style={{ backgroundImage: `url(${aboutSlide.backgroundImage})` }}
         />
         <div
-          className="flex-1 bg-cover bg-center"
-          style={{ backgroundImage: `url(${aboutSlide.secondaryImage})`, backgroundColor: '#1a1a1a' }}
+          className="flex-1 bg-cover bg-top"
+          style={{ backgroundImage: `url(${aboutSlide.secondaryImage})` }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/50 to-black/70" />
       </div>
