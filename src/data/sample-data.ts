@@ -82,7 +82,6 @@ export const episodes: Episode[] = [
       { title: 'The Person Behind', startTime: 1800 },
       { title: 'Quick Fire Questions', startTime: 2520 },
     ],
-    featured: true,
     images: [
       '/rise-and-fall-podcast/episodes/azrieli/Azrieli_Web_Hero-2160x1080.webp',
       '/rise-and-fall-podcast/episodes/azrieli/dana-azrieli.png',
@@ -117,7 +116,6 @@ export const episodes: Episode[] = [
       },
     ],
     topics: ['Hospitality', 'Entrepreneurship', 'Europe', 'Hotels'],
-    featured: true,
     images: [
       '/rise-and-fall-podcast/episodes/fattal/fattal-hotels.png',
       '/rise-and-fall-podcast/episodes/fattal/david-fattal.jpeg',
@@ -145,7 +143,6 @@ export const episodes: Episode[] = [
       },
     ],
     topics: ['Luxury Real Estate', 'Architecture', 'Development', 'Design'],
-    featured: false,
     images: [
       '/rise-and-fall-podcast/episodes/rosen/rainbow.jpg',
       '/rise-and-fall-podcast/episodes/rosen/barak-rosen.jpg',
@@ -173,7 +170,6 @@ export const episodes: Episode[] = [
       },
     ],
     topics: ['Real Estate', 'Family Business', 'Partnership', 'Competition'],
-    featured: false,
     images: [
       '/rise-and-fall-podcast/episodes/hagag/first.png',
       '/rise-and-fall-podcast/episodes/hagag/hagag-brothers.jpg',
@@ -203,7 +199,6 @@ export const episodes: Episode[] = [
       },
     ],
     topics: ['Real Estate', 'Resilience', 'Leadership', 'Comeback'],
-    featured: true,
     images: [
       '/rise-and-fall-podcast/episodes/habs/mandarin.webp',
       '/rise-and-fall-podcast/episodes/habs/herzl-habs.webp',
@@ -215,7 +210,6 @@ export const slides: Slide[] = [
   {
     id: '1',
     type: 'hero',
-    category: 'PODCAST',
     title: 'The Rise & Fall',
     subtitle: 'Personal interviews with Real Estate leaders. Their roots, their journey, their legacy.',
     backgroundImage: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920',
@@ -225,7 +219,6 @@ export const slides: Slide[] = [
   {
     id: '2',
     type: 'episode',
-    category: 'Episode 1: Dana Azrieli',
     title: 'Building an Empire: The Azrieli Story',
     subtitle: 'with Dana Azrieli',
     backgroundImage: '/rise-and-fall-podcast/episodes/azrieli/Azrieli_Web_Hero-2160x1080.webp',
@@ -236,7 +229,6 @@ export const slides: Slide[] = [
   {
     id: '3',
     type: 'episode',
-    category: 'Episode 2: David Fattal',
     title: 'From Vision to Reality',
     subtitle: 'with David Fattal',
     backgroundImage: '/rise-and-fall-podcast/episodes/fattal/fattal-hotels.png',
@@ -246,7 +238,6 @@ export const slides: Slide[] = [
   {
     id: '4',
     type: 'episode',
-    category: 'Episode 3: Barak Rosen',
     title: 'The Art of Development',
     subtitle: 'with Barak Rosen',
     backgroundImage: '/rise-and-fall-podcast/episodes/rosen/rainbow.jpg',
@@ -256,7 +247,6 @@ export const slides: Slide[] = [
   {
     id: '5',
     type: 'episode',
-    category: 'Episode 4: Hagag Brothers',
     title: 'Partnerships & Competition Between Brothers',
     subtitle: 'with the Hagag Brothers',
     backgroundImage: '/rise-and-fall-podcast/episodes/hagag/first.png',
@@ -267,7 +257,6 @@ export const slides: Slide[] = [
   {
     id: '7',
     type: 'episode',
-    category: 'Episode 5: Herzl Habs',
     title: 'The Greatest Comeback',
     subtitle: 'with Herzl Habs',
     backgroundImage: '/rise-and-fall-podcast/episodes/habs/mandarin.webp',
@@ -278,7 +267,6 @@ export const slides: Slide[] = [
   {
     id: '8',
     type: 'about',
-    category: 'ABOUT',
     title: 'Meet Your Hosts',
     subtitle: 'Aviv and Leon bring you insider access',
     backgroundImage: '/rise-and-fall-podcast/about/aviv.jpeg',
@@ -289,7 +277,6 @@ export const slides: Slide[] = [
   {
     id: '9',
     type: 'contact',
-    category: 'CONNECT',
     title: 'Join the Conversation',
     subtitle: 'Subscribe and get exclusive access',
     backgroundImage: 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=1920',

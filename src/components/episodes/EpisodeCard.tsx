@@ -59,13 +59,6 @@ export default function EpisodeCard({ episode, index = 0 }: EpisodeCardProps) {
             <Clock size={12} />
             {formatDuration(episode.duration)}
           </div>
-
-          {/* Featured Badge */}
-          {episode.featured && (
-            <div className="absolute top-3 left-3 bg-white text-black px-2 py-1 text-xs uppercase tracking-wider">
-              Featured
-            </div>
-          )}
         </div>
 
         {/* Content */}

@@ -15,7 +15,6 @@ export interface Episode {
   guests?: Guest[];
   topics: string[];
   chapters?: Chapter[];
-  featured: boolean;
   images?: string[];
   imagePosition?: string;
   artworkPosition?: string;
