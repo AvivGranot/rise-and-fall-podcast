@@ -87,6 +87,7 @@ export const episodes: Episode[] = [
       '/rise-and-fall-podcast/episodes/azrieli/dana-azrieli.png',
     ],
     artworkPosition: '40%',
+    mobileArtworkPosition: '35%',
     imagePosition: 'right',
   },
   {

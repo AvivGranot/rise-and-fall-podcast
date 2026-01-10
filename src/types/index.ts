@@ -18,6 +18,7 @@ export interface Episode {
   images?: string[];
   imagePosition?: string;
   artworkPosition?: string;
+  mobileArtworkPosition?: string;
 }
 
 export interface Series {

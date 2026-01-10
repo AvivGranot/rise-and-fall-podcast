@@ -24,11 +24,20 @@ export default function EpisodeScrollExperience({
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  const [isMobile, setIsMobile] = useState(false);
   const { t, isRTL } = useLanguage();
 
   // Touch handling
   const touchStartX = useRef(0);
   const touchEndX = useRef(0);
+
+  // Detect mobile
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   // Total slides: episodes + about + contact
   const totalSlides = episodes.length + 2;
@@ -129,12 +138,17 @@ export default function EpisodeScrollExperience({
     }
   };
 
-  const renderEpisodeSlide = (episode: Episode) => (
+  const renderEpisodeSlide = (episode: Episode) => {
+    const position = isMobile && episode.mobileArtworkPosition
+      ? episode.mobileArtworkPosition
+      : episode.artworkPosition;
+
+    return (
     <div
       className="absolute inset-0 bg-cover md:bg-center bg-top"
       style={{
         backgroundImage: `url(${episode.artwork})`,
-        backgroundPosition: episode.artworkPosition ? `${episode.artworkPosition} top` : 'center'
+        backgroundPosition: position ? `${position} top` : 'center'
       }}
     >
       <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/50 to-black/70" />
@@ -175,6 +189,7 @@ export default function EpisodeScrollExperience({
       </div>
     </div>
   );
+  };
 
   const renderAboutSlide = () => (
     <>
