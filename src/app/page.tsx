@@ -1,6 +1,5 @@
 import EpisodeScrollExperience from '@/components/home/EpisodeScrollExperience';
 import HomeContent from '@/components/home/HomeContent';
-import MobileEpisodesList from '@/components/home/MobileEpisodesList';
 import { episodes, slides } from '@/data/sample-data';
 
 export default function Home() {
@@ -13,23 +12,15 @@ export default function Home() {
 
   return (
     <div>
-      {/* Mobile: Show episodes list */}
-      <div className="md:hidden">
-        <MobileEpisodesList episodes={sortedEpisodes} />
-      </div>
+      {/* Carousel Section - Same for mobile and desktop */}
+      <EpisodeScrollExperience
+        episodes={sortedEpisodes}
+        aboutSlide={aboutSlide}
+        contactSlide={contactSlide}
+      />
 
-      {/* Desktop: Show carousel experience */}
-      <div className="hidden md:block">
-        {/* Carousel Section */}
-        <EpisodeScrollExperience
-          episodes={sortedEpisodes}
-          aboutSlide={aboutSlide}
-          contactSlide={contactSlide}
-        />
-
-        {/* Rest of home page content with translations */}
-        <HomeContent />
-      </div>
+      {/* Hosts Section */}
+      <HomeContent />
     </div>
   );
 }

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight, Play } from 'lucide-react';
 import Link from 'next/link';
@@ -25,6 +25,10 @@ export default function EpisodeScrollExperience({
   const [direction, setDirection] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const { t, isRTL } = useLanguage();
+
+  // Touch handling
+  const touchStartX = useRef(0);
+  const touchEndX = useRef(0);
 
   // Total slides: episodes + about + contact
   const totalSlides = episodes.length + 2;
@@ -59,6 +63,31 @@ export default function EpisodeScrollExperience({
   const handleUserInteraction = () => {
     setIsAutoPlaying(false);
     setTimeout(() => setIsAutoPlaying(true), 20000);
+  };
+
+  // Touch handlers for swipe
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    touchEndX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = () => {
+    const diff = touchStartX.current - touchEndX.current;
+    const minSwipeDistance = 50;
+
+    if (Math.abs(diff) > minSwipeDistance) {
+      handleUserInteraction();
+      if (diff > 0) {
+        // Swipe left - next slide
+        nextSlide();
+      } else {
+        // Swipe right - previous slide
+        prevSlide();
+      }
+    }
   };
 
   // Keyboard navigation
@@ -235,7 +264,13 @@ export default function EpisodeScrollExperience({
   };
 
   return (
-    <div id="carousel" className="relative h-screen w-full overflow-hidden">
+    <div
+      id="carousel"
+      className="relative h-screen w-full overflow-hidden"
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
+    >
       {/* Mini Navigation Sidebar */}
       <div className={`fixed top-1/2 -translate-y-1/2 z-40 hidden lg:block ${isRTL ? 'right-6' : 'left-6'}`}>
         <ul className="space-y-4">
