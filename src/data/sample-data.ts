@@ -108,7 +108,7 @@ export const episodes: Episode[] = [
     audioUrl: '/audio/sample.mp3',
     duration: 2700,
     publishedAt: '2025-03-08',
-    artwork: '/rise-and-fall-podcast/episodes/fattal/botanica.avif',
+    artwork: '/rise-and-fall-podcast/episodes/fattal/jaffa_hotel.avif',
     guests: [
       {
         id: '2',
@@ -119,7 +119,7 @@ export const episodes: Episode[] = [
     ],
     topics: ['Hospitality', 'Entrepreneurship', 'Europe', 'Hotels'],
     images: [
-      '/rise-and-fall-podcast/episodes/fattal/botanica.avif',
+      '/rise-and-fall-podcast/episodes/fattal/jaffa_hotel.avif',
       '/rise-and-fall-podcast/episodes/fattal/david-fattal.jpeg',
     ],
   },
@@ -233,7 +233,7 @@ export const slides: Slide[] = [
     type: 'episode',
     title: 'From Vision to Reality',
     subtitle: 'with David Fattal',
-    backgroundImage: '/rise-and-fall-podcast/episodes/fattal/botanica.avif',
+    backgroundImage: '/rise-and-fall-podcast/episodes/fattal/jaffa_hotel.avif',
     ctaText: 'Listen Now',
     ctaLink: '/episodes/from-vision-to-reality-fattal',
   },
