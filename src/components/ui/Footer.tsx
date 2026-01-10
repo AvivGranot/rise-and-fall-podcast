@@ -9,7 +9,7 @@ export default function Footer() {
   const { t, isRTL } = useLanguage();
 
   return (
-    <footer className="hidden md:block bg-[#0a0a0a] border-t border-[#222]">
+    <footer className="bg-[#0a0a0a] border-t border-[#222]">
       <div className="px-6 md:px-12 lg:px-24 py-16">
         <div className="max-w-6xl mx-auto">
           <div className={`grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 mb-16 ${isRTL ? 'text-right' : ''}`}>

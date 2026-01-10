@@ -51,10 +51,8 @@ export default function RootLayout({
           <main>{children}</main>
           <Footer />
           <AudioPlayer isVisible={false} />
-          <div className="hidden md:block">
-            <ShareWidget />
-            <SpotifyWidget />
-          </div>
+          <ShareWidget />
+          <SpotifyWidget />
         </LanguageProvider>
       </body>
     </html>
