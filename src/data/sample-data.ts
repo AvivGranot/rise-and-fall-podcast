@@ -122,8 +122,6 @@ export const episodes: Episode[] = [
       '/rise-and-fall-podcast/episodes/fattal/fattal-hotels.png',
       '/rise-and-fall-podcast/episodes/fattal/david-fattal.jpeg',
     ],
-    artworkSize: 'contain',
-    artworkPosition: 'center',
   },
   {
     id: '3',
