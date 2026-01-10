@@ -19,6 +19,7 @@ export interface Episode {
   imagePosition?: string;
   artworkPosition?: string;
   mobileArtworkPosition?: string;
+  artworkSize?: string;
 }
 
 export interface Series {

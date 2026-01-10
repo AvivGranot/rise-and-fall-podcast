@@ -148,7 +148,8 @@ export default function EpisodeScrollExperience({
       className="absolute inset-0 bg-cover md:bg-center bg-top"
       style={{
         backgroundImage: `url(${episode.artwork})`,
-        backgroundPosition: position ? `${position} top` : 'center'
+        backgroundPosition: position ? `${position} top` : 'center',
+        backgroundSize: episode.artworkSize || 'cover'
       }}
     >
       <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/50 to-black/70" />
